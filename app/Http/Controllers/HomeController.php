@@ -11,8 +11,12 @@ class HomeController extends Controller
 {
     public function homeView()
     {
-        $imagens_imoveis = Imagens::all();
-        dd($imagens_imoveis);
-        return view('home');
+        $usuario = Usuario::find(1);
+        $imoveis = Imovel::all();
+
+        return view('home', [
+            "imoveis" => $imoveis,
+            "usuario" => $usuario,
+        ]);
     }
 }

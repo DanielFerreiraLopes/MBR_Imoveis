@@ -19,19 +19,18 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'homeView']);
 
 
+
 Route::get('/login', [UsuarioController::class, 'loginView']);
 Route::post('/fazer-login', [UsuarioController::class, 'login']);
-
 
 Route::get('/cadastro', [UsuarioController::class, 'cadastroView']);
 Route::post('/fazer-cadastro', [UsuarioController::class, 'cadastro']);
 
-
 Route::get('/conta', [UsuarioController::class, 'contaView']);
 
 
-Route::get('/venda', [ImovelController::class, 'vendaView']);
 
+Route::get('/venda', [ImovelController::class, 'vendaView']);
 
 Route::get('/pesquisa', [ImovelController::class, 'pesquisaView']);
 
