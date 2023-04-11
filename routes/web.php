@@ -33,3 +33,4 @@ Route::get('/conta', [UsuarioController::class, 'contaView']);
 Route::get('/venda', [ImovelController::class, 'vendaView']);
 
 Route::get('/pesquisa', [ImovelController::class, 'pesquisaView']);
+
