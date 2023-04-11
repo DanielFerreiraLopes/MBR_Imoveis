@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class UsuarioController extends Controller
 {
@@ -13,8 +15,18 @@ class UsuarioController extends Controller
 
     public function login(Request $request)
     {
-        $form = $request->all();
-        dd($form);
+        $email = $request->input('email');
+        $senha = $request->input('senha');
+        
+        $usuario = Usuario::where('email', $email)->where('senha', $senha)->first();
+
+        if ($usuario) {
+            Session::put('info_usuario', $usuario);
+            return redirect('/');
+        } else {
+            exit("Usuario nao encontrado");
+        }
+
     }
 
 

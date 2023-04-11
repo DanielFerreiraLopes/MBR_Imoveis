@@ -8,7 +8,7 @@
                 <img src="/img/Logo_White.png">
             </div>
 
-            <form action="fazer-cadastro">
+            <form action="fazer-cadastro"  >
                 <input type="text" name="email" placeholder="Nome" required><br>
                 <input type="email" name="email" placeholder="Email" required><br>
                 <input type="email" name="confirmemail" placeholder="Confirmar Email" required><br>
