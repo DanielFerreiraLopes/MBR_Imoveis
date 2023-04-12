@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class UsuarioController extends Controller
 {
@@ -35,10 +37,22 @@ class UsuarioController extends Controller
         return view('log/cadastro');
     }
 
+   
+
     public function cadastro(Request $request)
     {
-        $form = $request->all();
-        dd($form); 
+        $nome = $request->input('nome');
+        $telefone = $request->input('tele');
+        $email = $request->input('email');
+        $conemail = $request->input('confirmemail');
+        $senha = $request->input('senha');
+
+        DB::table('usuario')->insert([
+            'nome' => $nome,
+            'email' => $email,
+            'telefone' => $telefone,
+            'senha' => $senha
+        ]);
     }
 
 
