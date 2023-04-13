@@ -34,3 +34,6 @@ Route::get('/venda', [ImovelController::class, 'vendaView']);
 
 Route::get('/pesquisa', [ImovelController::class, 'pesquisaView']);
 
+Route::get('/teste', function () {
+    return view('teste');
+});

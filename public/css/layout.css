@@ -2,8 +2,13 @@ body {
     background-color: #1b1f27;
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
+/* Style da nav bar */
 .navbar ul {
     list-style-type: none;
     margin: 0;
@@ -17,6 +22,12 @@ body {
 
 .navbar li {
     float: left;
+    
+}
+
+.navbar li img{
+    width: 20px;
+    color: white;
     
 }
 
@@ -38,6 +49,11 @@ body {
     background-color: #8d6546;
 }
 
+/* Style da nav bar */
+
+
+
+/* Style do Footer */
 footer {
     width: 100%;
     padding: 10px;
@@ -48,7 +64,11 @@ footer {
     color: #ffffff;
     box-sizing: border-box;
 }
+/* Style do Footer */
 
+
+
+/* Style do login */
 .area-login {
     display: flex;
     justify-content: center;
@@ -110,5 +130,97 @@ a {
     text-decoration: none;
     margin-left: 10px;
 }
+/* Style do login */
+
+
+
+.conteudo-dinamico {
+    flex-grow: 1;
+}
+
+
+/* Style da area de pesquisa */
+.form-search {
+    display: flex;
+    border: none;
+    width: 85vw;
+    height: 85vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+} 
+
+.overlay-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0 0 0 45%);
+    backdrop-filter: blur(20px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+form button{
+    display: block;
+    background-color: #5568fe;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button {
+    margin-top: 10px;
+    background-color: #252a34;
+    padding-left: 10px;
+    color: #cbd0f7;
+    border: none;
+    height: 45px;
+    outline: none;
+    border-radius: 8px;
+}
+
+.btn-search {
+    border: none;
+    outline: none;
+    background-color: #000;
+    padding: 14px;
+}
+
+.btn-search:hover{
+    background-color: #8d6546;
+    cursor: pointer;
+}
+
+.btn-hidden {
+    right: 0;
+    top: 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 18px 22px;
+    background: transparent;
+    position: absolute;
+}
+
+.btn-hidden img {
+    width: 30px;
+}
+
+.pesquisa {
+    width: 50vw;
+}
+/* Style da area de pesquisa */
 
 

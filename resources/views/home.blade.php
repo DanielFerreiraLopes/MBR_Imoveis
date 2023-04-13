@@ -1,25 +1,19 @@
 <title>Home - MBR Imoveis</title>
+<style>
+    table{
+        color: azure;
+    }
+</style>
 <x-layout>
-    <!-- conectando e mostrando as informações do banco na pagina  -->
-    <ul>
-        <li>
-            {{ $usuario->nome }}
-            @foreach($usuario->imoveis as $imovel)
-                <ul>
-                    <li>
-                        {{ $imovel->preco }}
-                        @foreach($imovel->imagens as $imagem)
-                            <ul>
-                                <li>{{ $imagem->arquivo }}</li>
-                            </ul>
-                        @endforeach
-                    </li>
-                </ul>
-            @endforeach
-        </li>
-    </ul>
-    
-    <table>
+
+    <div>
+        <table>
+            
+        </table>
+    </div>
+
+
+    {{-- <table>
         <thead>
             <tr>
                 <th>Quartos</th>
@@ -30,12 +24,12 @@
         <tbody>
             @foreach($imoveis as $imovel)
                 <tr>
-                    <td>{{ $imovel->quartos }}</td>
+                    <td>{{ $imovel->quarto }}</td>
                     <td>{{ $imovel->bairro }}</td>
                     <td>{{ $imovel->preco }}</td>
                 </tr>
             @endforeach
         </tbody>
-    </table>
+    </table> --}}
     
 </x-layout>
