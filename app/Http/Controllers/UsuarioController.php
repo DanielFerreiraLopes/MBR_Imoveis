@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class UsuarioController extends Controller
 {
@@ -31,6 +32,14 @@ class UsuarioController extends Controller
 
     }
 
+    public function logout(){
+
+        Session::flush();
+
+        return redirect('/login');
+
+    }
+
 
     public function cadastroView()
     {
@@ -47,12 +56,21 @@ class UsuarioController extends Controller
         $conemail = $request->input('confirmemail');
         $senha = $request->input('senha');
 
-        DB::table('usuario')->insert([
-            'nome' => $nome,
-            'email' => $email,
-            'telefone' => $telefone,
-            'senha' => $senha
-        ]);
+        if($email == $conemail){
+
+            DB::table('usuario')->insert([
+                'nome' => $nome,
+                'email' => $email,
+                'telefone' => $telefone,
+                'senha' => $senha
+            ]);
+
+        }
+        else{
+            exit("Email esta Incorreto");
+        }
+
+       
     }
 
 
