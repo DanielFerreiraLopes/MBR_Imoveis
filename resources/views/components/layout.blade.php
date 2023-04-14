@@ -12,19 +12,40 @@
     <header>
         <div class="navbar">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="pesquisa">Pesquisar</a></li>
-                <li><a href="venda">Vender</a></li>
-                <li><a href="conta">Conta</a></li>
+                <li><a href="/"><img src="img/home.svg"></a></li>
+                
+                <li><a href="venda"><img src="img/dollar_sign.svg" alt=""></a></li>
+                <li><a href="conta"><img src="img/account.svg"></a></li>
                 <li style="float:right"><a class="active" href="login">Login</a></li>
+                <li style="float:right"><button type="button" onclick="mostrar()" class="btn-search"><img src="img/search.svg"></button></li>
              </ul>
         </div>
     </header>
         <div class="conteudo-dinamico">
             {{ $slot }}
         </div>
+
+        <div class="overlay-search hidden">
+            <form action="" class="form-search">
+                <button type="button" onclick="esconder()" class="btn-hidden"><img src="img/cancel.svg"></button>
+                <input type="text" name="search" class="pesquisa">
+                <button type="submit">Pesquisar</button>
+            </form>
+        </div>
     <footer>
         Copyright 2022 © - MBR IMOVEIS
     </footer>
+
+    <script>
+        function mostrar() {
+            let overlaySearch = document.querySelector(".overlay-search");
+            overlaySearch.classList.remove("hidden");
+        }
+
+        function esconder() {
+            let overlaySearch = document.querySelector(".overlay-search");
+            overlaySearch.classList.add("hidden")
+        }
+    </script>
 </body>
 </html>
