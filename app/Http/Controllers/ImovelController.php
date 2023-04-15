@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Http\Controllers;
@@ -15,35 +16,15 @@ class ImovelController extends Controller
 
     public function pesquisaView(Request $request)
     {
-        $query = Usuario::query();
 
-        $telefone = $request->input('telefone');
-        $nome = $request->input('nome');
-        $email = $request->input('email');
-
-        if($telefone) {
-            $query->where('telefone', '=', $telefone);
-        }
-
-        if($nome) {
-            $query->where('nome', 'LIKE', "%$nome%");
-        }
-
-        if($email) {
-            $query->where('email', 'LIKE', "%$email%");
-        }
-
-        $usuariosFiltrados = $query->get();
-
-        return view('imovel/pesquisa', [
-            'usuariosFiltrados' => $usuariosFiltrados,
-        ]);
 
         $query = Imovel::query();
 
         $quarto = $request->input('quarto');
         $banheiro = $request->input('banheiro');
-        $preco = $request->input('preco');
+        $precomax = $request->input('precomax');
+        $precomini = $request->input('precomini');
+        
         $estado = $request->input('estado');
         $cidade = $request->input('cidade'); 
         $rua = $request->input('rua');
@@ -67,9 +48,13 @@ class ImovelController extends Controller
         if($rua) {
             $query->where('rua', 'LIKE', "%$rua%");
         }
-        if($preco) {
-            $query->where('preco', 'LIKE', $preco);
+        if($precomax) {
+            $query->where('preco', '>=', $precomax);
         }
+        if($precomini) {
+            $query->where('preco', '>=', $precomini);
+        }
+        
         if($bairro) {
             $query->where('bairro', 'LIKE', "%$bairro%");
         }
@@ -80,10 +65,10 @@ class ImovelController extends Controller
             $query->where('cep', '=', $cep);
         }
 
-        $imoveisViltro = $query->get();
+        $imoveisFiltro = $query->get();
 
         return view('imovel/pesquisa', [
-            'imoveisViltro' => $imoveisViltro,
+            'imoveisFiltro' => $imoveisFiltro,
         ]);
 
 

@@ -27,7 +27,7 @@ Route::get('/cadastro', [UsuarioController::class, 'cadastroView']);
 Route::post('/fazer-cadastro', [UsuarioController::class, 'cadastro']);
 
 Route::get('/conta', [UsuarioController::class, 'contaView']);
-
+Route::post('/fazer-conta', [UsuarioController::class, 'conta']);
 
 
 Route::get('/venda', [ImovelController::class, 'vendaView']);
