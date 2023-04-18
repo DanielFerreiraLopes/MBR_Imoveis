@@ -28,9 +28,11 @@ Route::post('/fazer-cadastro', [UsuarioController::class, 'cadastro']);
 
 Route::get('/conta', [UsuarioController::class, 'contaView']);
 Route::post('/fazer-conta', [UsuarioController::class, 'conta']);
+Route::post('/fazer-imovel', [UsuarioController::class, 'cadastro_Imovel']);
 
 
 Route::get('/venda', [ImovelController::class, 'vendaView']);
+
 
 Route::get('/pesquisa', [ImovelController::class, 'pesquisaView']);
 

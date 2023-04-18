@@ -27,7 +27,7 @@ class UsuarioController extends Controller
             Session::put('info_usuario', $usuario);
             return redirect('/');
         } else {
-            exit("Usuario nao encontrado");
+           return redirect('/login')->with('mensagem_erro', "Usuario não encontrado");
         }
     }
 
@@ -56,7 +56,13 @@ class UsuarioController extends Controller
         $senha = $request->input('senha');
 
         if ($email != $conemail) {
-            exit("Email esta Incorreto");
+            return redirect('/cadastro')->with('mensagem_erro', "A confirmação de email esta incorreta");
+        }
+
+        $confirma1 = Usuario::where('email', $email)->first();
+        $confirma2 = Usuario::where('telefone', $telefone)->first();
+        if ($confirma1 || $confirma2) {
+            return redirect('/cadastro')->with('mensagem_erro', "Esse Email ou Telefone já esta cadastrado, use outro");
         }
 
         DB::table('usuario')->insert([
@@ -66,7 +72,7 @@ class UsuarioController extends Controller
             'senha' => $senha
         ]);
 
-        return redirect('log/login');
+        return redirect('/login');
     }
 
 
@@ -74,34 +80,70 @@ class UsuarioController extends Controller
     {
         $logado = Session::get('info_usuario');
 
-            return view('log/conta', [
-                'logado' => $logado,
-            ]);
+        if(!$logado){
+            return redirect('/login')->with('mensagem_erro', "Aquela pagina só é permitida para usuarios Logados");
+        }
+
+        return view('log/conta', [
+            'logado' => $logado,
+        ]);
     }
 
-    public function conta(Request $request) {
+    public function conta(Request $request)
+    {
 
         $logado = Session::get('info_usuario');
-        
+
         $nomenovo = $request->input('nome_novo');
         $telefonenovo = $request->input('tele_novo');
         $emailnovo = $request->input('email_novo');
-        $senhanovo = $request->input('senha_novo'); 
+        $senhanovo = $request->input('senha_novo');
 
-      
+
 
 
         DB::table('usuario')
-        ->where('id', $logado->id)
-        ->update([
-            'nome' => $nomenovo,
-            'email' => $emailnovo,
-            'telefone' => $telefonenovo,
-            'senha' => $senhanovo
-        ]);
+            ->where('id', $logado->id)
+            ->update([
+                'nome' => $nomenovo,
+                'email' => $emailnovo,
+                'telefone' => $telefonenovo,
+                'senha' => $senhanovo
+            ]);
 
         /* Atu7alizar os dados na sessão */
 
         return redirect('/');
+    }
+
+    public function cadastro_Imovel(Request $request)
+    {
+        $logado = Session::get('info_usuario');
+
+        $quarto = $request->input('quarto');
+        $banheiro = $request->input('banheiro');
+        $preco = $request->input('preco');
+        $estado = $request->input('estado');
+        $cidade = $request->input('cidade');
+        $rua = $request->input('rua');
+        $bairro = $request->input('bairro');
+        $numero = $request->input('numero');
+        $cep = $request->input('cep');
+        $descricao = $request->input('descricao');
+        $id_usuario = $request->input($logado->id);
+
+        DB::table('imovel')->insert([
+            'quarto' => $quarto,
+            'banheiro' => $banheiro,
+            'preco' => $preco,
+            'estado' => $estado,
+            'cidade' => $cidade,
+            'rua' => $rua,
+            'bairro' => $bairro,
+            'numero' => $numero,
+            'cep' => $cep,
+            'descrição' => $descricao,
+            'id_usuario' => $id_usuario
+        ]);
     }
 }

@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Http\Controllers;
@@ -6,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Imovel;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ImovelController extends Controller
 {
@@ -13,6 +13,7 @@ class ImovelController extends Controller
     {
         return view('imovel/venda');
     }
+   
 
     public function pesquisaView(Request $request)
     {
@@ -52,7 +53,7 @@ class ImovelController extends Controller
             $query->where('preco', '>=', $precomax);
         }
         if($precomini) {
-            $query->where('preco', '>=', $precomini);
+            $query->where('preco', '<=', $precomini);
         }
         
         if($bairro) {
