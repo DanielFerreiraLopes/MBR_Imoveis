@@ -120,6 +120,8 @@ class UsuarioController extends Controller
     {
         $logado = Session::get('info_usuario');
 
+      
+
         $quarto = $request->input('quarto');
         $banheiro = $request->input('banheiro');
         $preco = $request->input('preco');
@@ -130,7 +132,7 @@ class UsuarioController extends Controller
         $numero = $request->input('numero');
         $cep = $request->input('cep');
         $descricao = $request->input('descricao');
-        $id_usuario = $request->input($logado->id);
+        $id = $logado->id;
 
         DB::table('imovel')->insert([
             'quarto' => $quarto,
@@ -142,8 +144,8 @@ class UsuarioController extends Controller
             'bairro' => $bairro,
             'numero' => $numero,
             'cep' => $cep,
-            'descrição' => $descricao,
-            'id_usuario' => $id_usuario
+            'descricao' => $descricao,
+            'id_usuario' => $id
         ]);
     }
 }
