@@ -10,6 +10,7 @@
         @csrf
     </form>
 
+
     <form action="fazer-imovel" method="post">
         <input type="text" name="quarto" placeholder="quarto" value="{{ $logado->quarto }}">
         <input type="text" name="banheiro" placeholder="banheiro" value="{{ $logado->banheiro }}">
@@ -24,5 +25,10 @@
         <input type="submit" value="VEM!">
         @csrf
     </form>
+
+
+        @foreach($imoveis as $imovel)
+            <li>{{ $imovel->id }}</li>
+        @endforeach
 
 </x-layout>
