@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
+
 use App\Models\Imovel;
 use App\Models\Usuario;
+use App\Models\Imagens;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
@@ -150,6 +154,7 @@ class UsuarioController extends Controller
         $logado = Session::get('info_usuario');
 
 
+        $id = $logado->id;
         $quarto_novo = $request->input('quarto');
         $banheiro_novo = $request->input('banheiro');
         $preco_novo = $request->input('preco');
@@ -160,7 +165,7 @@ class UsuarioController extends Controller
         $numero_novo = $request->input('numero');
         $cep_novo = $request->input('cep');
         $descricao_novo = $request->input('descricao');
-        $id = $logado->id;
+
 
 
         DB::table('usuario')
@@ -178,8 +183,7 @@ class UsuarioController extends Controller
                 'descricao' => $descricao_novo
             ]);
 
-            return redirect('/conta');
-
+        return redirect('/conta');
     }
 
     public function cadastro_Imovel(Request $request)
@@ -206,7 +210,7 @@ class UsuarioController extends Controller
         }
 
 
-        DB::table('imovel')->insert([
+        $id_imovel = DB::table('imovel')->insertGetId([
             'quarto' => $quarto,
             'banheiro' => $banheiro,
             'preco' => $preco,
@@ -219,5 +223,32 @@ class UsuarioController extends Controller
             'descricao' => $descricao,
             'id_usuario' => $id
         ]);
+
+        return redirect('/imagens/' . $id_imovel);
+    }
+
+    public function imagensView(int $id)
+    {
+
+        $imagens = DB::table('imagens_imoveis')
+            ->where('id_imovel', $id)
+            ->get();
+
+        return view('log/imagens', [
+            'id_imovel' => $id,
+            'imagens' => $imagens,
+        ]);
+    }
+
+    public function imagens(Request $request)
+    {
+        $path = $request->file('image')->store('fotos', 'public');
+
+        DB::table('imagens_imoveis')->insert([
+            'arquivo' => '/storage/' . $path,
+            'id_imovel' => $request->input('id_imovel')
+        ]);
+
+        return redirect('/conta');
     }
 }

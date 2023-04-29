@@ -26,9 +26,4 @@
         @csrf
     </form>
 
-
-        @foreach($imoveis as $imovel)
-            <li>{{ $imovel->id }}</li>
-        @endforeach
-
 </x-layout>

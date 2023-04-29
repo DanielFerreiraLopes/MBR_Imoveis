@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Imagens;
 use App\Models\Imovel;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
@@ -13,8 +14,8 @@ class ImovelController extends Controller
     {
         return view('imovel/venda');
     }
-   
 
+    
     public function pesquisaView(Request $request)
     {
 
@@ -25,44 +26,44 @@ class ImovelController extends Controller
         $banheiro = $request->input('banheiro');
         $precomax = $request->input('precomax');
         $precomini = $request->input('precomini');
-        
+
         $estado = $request->input('estado');
-        $cidade = $request->input('cidade'); 
+        $cidade = $request->input('cidade');
         $rua = $request->input('rua');
         $bairro = $request->input('bairro');
         $numero = $request->input('numero');
         $cep = $request->input('cep');
 
 
-        if($quarto) {
+        if ($quarto) {
             $query->where('quarto', '=', $quarto);
         }
-        if($banheiro) {
+        if ($banheiro) {
             $query->where('banheiro', '=', $banheiro);
         }
-        if($estado) {
+        if ($estado) {
             $query->where('estado', 'LIKE', "%$estado%");
         }
-        if($cidade) {
+        if ($cidade) {
             $query->where('cidade', 'LIKE', "%$cidade%");
         }
-        if($rua) {
+        if ($rua) {
             $query->where('rua', 'LIKE', "%$rua%");
         }
-        if($precomax) {
+        if ($precomax) {
             $query->where('preco', '>=', $precomax);
         }
-        if($precomini) {
+        if ($precomini) {
             $query->where('preco', '<=', $precomini);
         }
-        
-        if($bairro) {
+
+        if ($bairro) {
             $query->where('bairro', 'LIKE', "%$bairro%");
         }
-        if($numero) {
+        if ($numero) {
             $query->where('numero', '=', $numero);
         }
-        if($cep) {
+        if ($cep) {
             $query->where('cep', '=', $cep);
         }
 
@@ -71,8 +72,5 @@ class ImovelController extends Controller
         return view('imovel/pesquisa', [
             'imoveisFiltro' => $imoveisFiltro,
         ]);
-
-
-       
     }
 }
