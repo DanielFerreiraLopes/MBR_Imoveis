@@ -278,3 +278,5 @@ class UsuarioController extends Controller
 }
 
 // unlink("/../storage/app/public/fotos/e5raDd3qJNqShmiY1mTFzfc00Jk8881xs3vDB7cu.jpg");
+
+// coisa boba, ignore.
