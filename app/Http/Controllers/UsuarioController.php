@@ -230,6 +230,8 @@ class UsuarioController extends Controller
     public function imagensView(int $id)
     {
 
+        $caminho = realpath('6zR8zjHFCw5lOCiEl1ON68aKVPWcZrKCggw98aw4.jpg');
+
         $imagens = DB::table('imagens_imoveis')
             ->where('id_imovel', $id)
             ->get();
@@ -244,11 +246,35 @@ class UsuarioController extends Controller
     {
         $path = $request->file('image')->store('fotos', 'public');
 
+        $id = $request->input('id_imovel');
+
         DB::table('imagens_imoveis')->insert([
             'arquivo' => '/storage/' . $path,
-            'id_imovel' => $request->input('id_imovel')
+            'id_imovel' => $id
         ]);
 
-        return redirect('/conta');
+        return redirect('/imagens/' . $id);
+    }
+
+    public function delete_imagens(Request $request)
+    {
+
+        $id = $request->input('id_imagem');
+
+        $id_imovel = $request->input('id_imovel');
+
+        $path = DB::table('imagens_imoveis')
+            ->where('id', $id)
+            ->first('arquivo');
+
+        //dd($path->arquivo);
+        unlink($_SERVER['DOCUMENT_ROOT'] . '/..' . $path->arquivo);
+
+        DB::table('imagens_imoveis')->where('id', '=', $id)->where('id_imovel', '=', $id_imovel)->delete();
+
+
+        return redirect('/imagens/' . $id_imovel);
     }
 }
+
+// unlink("/../storage/app/public/fotos/e5raDd3qJNqShmiY1mTFzfc00Jk8881xs3vDB7cu.jpg");

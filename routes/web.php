@@ -31,6 +31,7 @@ Route::post('/fazer-conta', [UsuarioController::class, 'conta']);
 Route::post('/fazer-imovel', [UsuarioController::class, 'cadastro_Imovel']);
 Route::get('/imagens/{id}', [UsuarioController::class, 'imagensView']);
 Route::post('/imagens', [UsuarioController::class, 'imagens']);
+Route::post('/deletar_imagens', [UsuarioController::class, 'delete_imagens']);
 Route::post('/refazer-imovel', [UsuarioController::class, 'alterar_Imovel']);
 
 
