@@ -1,7 +1,6 @@
 body {
     background-color: #1b1f27;
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     min-height: 100vh;

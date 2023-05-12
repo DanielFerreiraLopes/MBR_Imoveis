@@ -26,8 +26,4 @@
         @csrf
     </form>
 
-
-
-
-
 </x-layout>

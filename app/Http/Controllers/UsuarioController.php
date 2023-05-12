@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class UsuarioController extends Controller
 {
@@ -146,6 +147,22 @@ class UsuarioController extends Controller
 
         $id = $request->input('id_imovel');
 
+        DB::table('imagens_imoveis')->where('id_imovel', '=', $id);
+
+
+        $path = DB::table('imagens_imoveis')
+            ->where('id', $id)
+            ->first('arquivo');
+
+        $novo_texto = str_replace("/storage", "public", $path->arquivo);
+
+        if (Storage::exists($novo_texto)) {
+            Storage::delete($novo_texto);
+        }
+
+        DB::table('imagens_imoveis')->where('id', '=', $id)->where('id_imovel', '=', $id_imovel)->delete();
+
+
         DB::table('imovel')->where('id', '=', $id)->where('id_usuario', '=', $logado->id)->delete();
     }
 
@@ -267,8 +284,11 @@ class UsuarioController extends Controller
             ->where('id', $id)
             ->first('arquivo');
 
-        //dd($path->arquivo);
-        unlink($_SERVER['DOCUMENT_ROOT'] . '/..' . $path->arquivo);
+        $novo_texto = str_replace("/storage", "public", $path->arquivo);
+
+        if (Storage::exists($novo_texto)) {
+            Storage::delete($novo_texto);
+        }
 
         DB::table('imagens_imoveis')->where('id', '=', $id)->where('id_imovel', '=', $id_imovel)->delete();
 
@@ -276,7 +296,3 @@ class UsuarioController extends Controller
         return redirect('/imagens/' . $id_imovel);
     }
 }
-
-// unlink("/../storage/app/public/fotos/e5raDd3qJNqShmiY1mTFzfc00Jk8881xs3vDB7cu.jpg");
-
-// coisa boba, ignore.
