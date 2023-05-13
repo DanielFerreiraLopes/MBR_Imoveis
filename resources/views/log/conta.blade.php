@@ -26,4 +26,14 @@
         @csrf
     </form>
 
+    @foreach ($imoveis as $imovel)
+    <p>{{ $imovel->id }}</p>
+    <form action="deletar_imovel" method="post">
+        <input type="hidden" name="id_imovel" value="{{ $imovel->id }}">
+        <button type="submit">Deletar</button>
+        @csrf
+    </form>
+    @endforeach
+
+
 </x-layout>

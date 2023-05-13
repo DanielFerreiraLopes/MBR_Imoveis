@@ -13,7 +13,7 @@
         @csrf
         <input type="file" name="image">
         <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
-        <button type=" submit">Enviar</button>
+        <button type="submit">Enviar</button>
     </form>
 
     <a href="/conta">Voltar</a>

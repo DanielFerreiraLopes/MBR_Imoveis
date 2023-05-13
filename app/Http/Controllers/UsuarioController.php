@@ -86,16 +86,20 @@ class UsuarioController extends Controller
     {
         $logado = Session::get('info_usuario');
 
-
-
         if (!$logado) {
             return redirect('/login')->with('mensagem_erro', "A pagina só é permitida para usuarios Logados");
         }
 
 
+        $id_logado = $logado->id;
+
+        $imoveis = DB::table('imovel')
+            ->where('id_usuario', $id_logado)
+            ->get();
 
         return view('log/conta', [
             'logado' => $logado,
+            'imoveis' => $imoveis
 
         ]);
     }
@@ -104,7 +108,6 @@ class UsuarioController extends Controller
     {
 
         $logado = Session::get('info_usuario');
-
 
         $nomenovo = $request->input('nome_novo');
         $telefonenovo = $request->input('tele_novo');
@@ -128,17 +131,6 @@ class UsuarioController extends Controller
     public function listar_imoveis()
     {
         $logado = Session::get('info_usuario');
-
-        $id = $logado->id;
-
-        $imoveis = DB::table('imovel')
-            ->where('id_usuario', $id)
-            ->get();
-
-        return view('log/conta', [
-            'logado' => $logado,
-            'imoveis' => $imoveis,
-        ]);
     }
 
     public function deletar_imovel(Request $request)
@@ -147,23 +139,24 @@ class UsuarioController extends Controller
 
         $id = $request->input('id_imovel');
 
-        DB::table('imagens_imoveis')->where('id_imovel', '=', $id);
+        $imagens = DB::table('imagens_imoveis')
+            ->where('id_imovel', $id)
+            ->get();
 
+        foreach ($imagens as $imagem) {
 
-        $path = DB::table('imagens_imoveis')
-            ->where('id', $id)
-            ->first('arquivo');
+            $delete = str_replace("/storage", "public", $imagem->arquivo);
 
-        $novo_texto = str_replace("/storage", "public", $path->arquivo);
+            if (Storage::exists($delete)) {
+                Storage::delete($delete);
+            }
 
-        if (Storage::exists($novo_texto)) {
-            Storage::delete($novo_texto);
+            DB::table('imagens_imoveis')->where('id_imovel', '=', $id)->delete();
+
+            DB::table('imovel')->where('id', '=', $id)->where('id_usuario', '=', $logado->id)->delete();
+
+                 return redirect('/conta');
         }
-
-        DB::table('imagens_imoveis')->where('id', '=', $id)->where('id_imovel', '=', $id_imovel)->delete();
-
-
-        DB::table('imovel')->where('id', '=', $id)->where('id_usuario', '=', $logado->id)->delete();
     }
 
     public function alterar_Imovel(Request $request)
