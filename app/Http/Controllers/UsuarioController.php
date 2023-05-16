@@ -155,7 +155,7 @@ class UsuarioController extends Controller
 
             DB::table('imovel')->where('id', '=', $id)->where('id_usuario', '=', $logado->id)->delete();
 
-                 return redirect('/conta');
+            return redirect('/conta');
         }
     }
 
