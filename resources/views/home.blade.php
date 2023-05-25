@@ -1,35 +1,23 @@
 <title>Home - MBR Imoveis</title>
 <style>
-    table{
+    table {
         color: azure;
     }
 </style>
 <x-layout>
 
-    <div>
-        <table>
-            
-        </table>
+    <link rel="stylesheet" href="/css/home.css">
+    @foreach($imoveis as $imovel)
+    <div class="box_imovel">
+        @if ( $imovel->imagens->isNotEmpty())
+        <img src="{{ $imovel->imagens[0]->arquivo}}">
+        @endif
+        <p>
+            {{ $imovel->descricao }}
+        </p>
+
+        <button>ver ++</button>
     </div>
+    @endforeach
 
-
-    {{-- <table>
-        <thead>
-            <tr>
-                <th>Quartos</th>
-                <th>Bairro</th>
-                <th>Preço</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($imoveis as $imovel)
-                <tr>
-                    <td>{{ $imovel->quarto }}</td>
-                    <td>{{ $imovel->bairro }}</td>
-                    <td>{{ $imovel->preco }}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table> --}}
-    
 </x-layout>

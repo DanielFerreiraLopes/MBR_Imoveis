@@ -1,4 +1,4 @@
-<title>Login - MBR Imoveis</title>
+ <title>Login - MBR Imoveis</title>
 <x-layout>
     <link rel="stylesheet" href="/css/login.css">
     <section class="area-login">
@@ -7,7 +7,7 @@
                 <img src="/img/Logo_White.png">
             </div>
         
-            <form action="fazer-login" method="post">
+            <form action="fazer-login" method="post" class='form-login'>
                 <input type="email" name='email' placeholder='Email' required><br>
                 <input type="password" name="senha" id="senha" placeholder="Senha" required><br>
                 <input type="submit" value="Entrar"><br>

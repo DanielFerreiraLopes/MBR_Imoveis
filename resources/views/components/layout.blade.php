@@ -14,12 +14,12 @@
     <header>
         <div class="navbar">
             <ul>
-                <li><a href="/"><img src="img/home.svg"></a></li>
+                <li><a href="/"><img src="/img/home.svg"></a></li>
 
-                <li><a href="venda"><img src="img/dollar_sign.svg" alt=""></a></li>
-                <li><a href="conta"><img src="img/account.svg"></a></li>
+                <li><a href="venda"><img src="/img/dollar_sign.svg" alt=""></a></li>
+                <li><a href="conta"><img src="/img/account.svg"></a></li>
                 <li style="float:right"><a class="active" href="login">Login</a></li>
-                <li style="float:right"><button type="button" onclick="mostrar()" class="btn-search"><img src="img/search.svg"></button></li>
+                <li style="float:right"><button type="button" onclick="mostrar()" class="btn-search"><img src="/img/search.svg"></button></li>
             </ul>
         </div>
     </header>
@@ -42,7 +42,7 @@
         </form>
     </div>
     <footer>
-        Copyright 2022 © - MBR IMOVEIS
+        Copyright 2023 © - MBR IMOVEIS
     </footer>
 
     <script>

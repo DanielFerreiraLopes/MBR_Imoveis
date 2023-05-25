@@ -1,7 +1,6 @@
 body {
     background-color: #1b1f27;
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -60,9 +59,10 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #1b1f27;
+    background: #181920;
     color: #ffffff;
     box-sizing: border-box;
+    box-shadow: 2px 2px 20px #4d576e;
 }
 /* Style do Footer */
 
@@ -87,6 +87,7 @@ footer {
     width: 100%;
     max-width: 350px;
     padding: 35px;
+    box-shadow: 2px 2px 20px #4d576e;
 }
 
 .login form {
@@ -112,8 +113,41 @@ input {
     border-radius: 8px;
 }
 
-form [type='submit']{
+.form-login [type='submit']{
     display: block;
+    background-color: #5568fe;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.alt-log [type='submit']{
+    display: block;
+    background-color: #5568fe;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-venda [type='submit']{
+    background-color: #5568fe;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-img [type='submit']{
+    background-color: #5568fe;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-finalizar [type='submit']{
     background-color: #5568fe;
     font-size: 20px;
     text-transform: uppercase;
@@ -135,6 +169,9 @@ a {
 
 
 .conteudo-dinamico {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
     flex-grow: 1;
 }
 
@@ -171,7 +208,7 @@ a {
     display: none;
 }
 
-form button{
+.form-search button{
     display: block;
     background-color: #5568fe;
     font-size: 20px;

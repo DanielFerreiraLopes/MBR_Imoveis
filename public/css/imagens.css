@@ -1,0 +1,36 @@
+.l-imagens {
+    display: flex;
+    align-items: center;
+    background-color: #181920;
+    border-radius: 10px;
+    width: 100%;
+    padding: 35px;
+    box-shadow: 2px 2px 20px #4d576e;
+}
+
+.imagens img {
+    width: 400;
+    height: 350;
+    object-fit: contain;
+}
+
+.venda form{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.conteudo-dinamico{
+    padding: 35px;
+    gap: 35px;
+}
+
+.imagens {
+    flex-wrap: wrap;
+}
+
+button [type='submit']{
+    color: #5568fe;
+}

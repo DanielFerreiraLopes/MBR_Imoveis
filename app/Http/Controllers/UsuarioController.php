@@ -249,6 +249,6 @@ class UsuarioController extends Controller
             'id_imovel' => $request->input('id_imovel')
         ]);
 
-        return redirect('/conta');
+        return redirect('/imagens/'.$request->input("id_imovel"));
     }
 }

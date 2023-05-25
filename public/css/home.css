@@ -1,8 +1,4 @@
-body {
-    background-color: #1b1f27;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
-}
+
 .navbar ul {
     list-style-type: none;
     margin: 0;
@@ -35,4 +31,27 @@ body {
 
 .navbar a:hover{
     background-color: #8d6546;
+}
+
+.conteudo-dinamico{
+    flex-direction: column;
+    display: flex;
+    gap: 35px;
+    padding: 35px;
+}
+
+.box_imovel{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    align-items: center;
+    gap: 30px;
+    padding: 25px;
+    box-shadow: 1px 1px 25px black;
+}
+
+.box_imovel img{
+    width: 400px;
+    height: 350px;
+    object-fit: contain;
 }
