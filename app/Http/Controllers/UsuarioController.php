@@ -263,9 +263,6 @@ class UsuarioController extends Controller
             'id_imovel' => $id
         ]);
 
-<<<<<<< HEAD
-        return redirect('/imagens/'.$request->input("id_imovel"));
-=======
         return redirect('/imagens/' . $id);
     }
 
@@ -290,6 +287,5 @@ class UsuarioController extends Controller
 
 
         return redirect('/imagens/' . $id_imovel);
->>>>>>> 888e2517b76f70e764c035db8c0b9df1a365ce1c
     }
 }

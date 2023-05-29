@@ -14,21 +14,6 @@
 
      <div class='imagens'>   
     @foreach ($imagens as $imagem)
-<<<<<<< HEAD
-    <img src="{{ $imagem->arquivo }}" alt="">
-    @endforeach
-
-
-
-
-        <form action="/" class='form-finalizar'>  
-            <button type="submit">Finalizar</button>
-        </form>
-
-    </div>
-
-    </div>
-=======
     <img src="{{ $imagem->arquivo }}" alt=""><br>
     <form action="/deletar_imagens" method="post">
         @csrf
@@ -46,5 +31,4 @@
     <a href="/conta">Voltar</a>
     <!-- ideia dos dois botão  -->
 
->>>>>>> 888e2517b76f70e764c035db8c0b9df1a365ce1c
 </x-layout>
