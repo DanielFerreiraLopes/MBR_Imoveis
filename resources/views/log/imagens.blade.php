@@ -3,33 +3,33 @@
 
     <div class='l-imagens'>
 
-        <form action=" /imagens" method="POST" enctype="multipart/form-data" class='form-img'>
-            @csrf
-            <input type="file" name="image">
-            <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
-            <button type="submit">Enviar</button>
-        </form>
+        
 
         <link rel="stylesheet" href="/css/imagens.css">
 
         <div class='imagens'>
-            @foreach ($imagens as $imagem)
-            <img src="{{ $imagem->arquivo }}" alt=""><br>
-            <form action="/deletar_imagens" method="post">
-                @csrf
-                <input type="hidden" name="id_imagem" value="{{ $imagem->id }}">
-                <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
-                <button type="submit">Deletar</button></br>
-            </form>
-            @endforeach
-            <form action=" /imagens" method="POST" enctype="multipart/form-data">
+            <form action=" /imagens" method="POST" enctype="multipart/form-data" class='form-img'>
                 @csrf
                 <input type="file" name="image">
                 <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
                 <button type="submit">Enviar</button>
             </form>
+            @foreach ($imagens as $imagem)
+            <img src="{{ $imagem->arquivo }}" alt=""><br>
 
-            <a href="/conta">Voltar</a>
+            <form action="/deletar_imagens" method="post">
+                @csrf
+                <input type="hidden" name="id_imagem" value="{{ $imagem->id }}">
+                <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
+                <button type="submit" class='delete'>Deletar</button></br>
+            </form>
+            @endforeach
+            
+            <br>
+            <a href="/conta" class='voltar'>Voltar</a>
             <!-- ideia dos dois botão  -->
+
+        </div>
+    </div>
 
 </x-layout>

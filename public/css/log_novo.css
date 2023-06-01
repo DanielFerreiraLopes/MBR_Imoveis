@@ -1,15 +1,15 @@
 .log_novo{
-    
     text-align: center;
     position: absolute;
     background-color: #181920;
     border-radius: 10px;
-    max-width: 350px;
+    max-width: 360px;
     width: 100%;
+    height: 550px;
     box-shadow: 0px 0px 50px 2px #4d576e;
 }
 
-.log_novo form [type='submit'] {
+.alt-log input[type='submit'] {
     margin-left: 120px;
     margin-top: 30px;
 }
@@ -24,6 +24,33 @@
 h4{
     color: white;
 }
+
+
+.alterar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.alterar button {
+    cursor: pointer;
+    height: 100%;
+
+}
+
+.alterar button.delete {
+    height: 50px;
+    width: 70px;
+    
+}
+
+
+
+
+
+
     /*<tr>
         <td>{{ $imovel->quarto }}</td>
         <td>{{ $imovel->bairro }}</td>

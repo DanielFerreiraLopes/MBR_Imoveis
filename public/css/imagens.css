@@ -33,4 +33,16 @@
 
 button [type='submit']{
     color: #5568fe;
+    
+}
+
+.delete{
+    color: #fe5555;
+    cursor: pointer;
+
+}
+
+.voltar{
+    color: #5558fe;
+    
 }
