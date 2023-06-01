@@ -2,20 +2,41 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Imagens;
 use App\Models\Imovel;
 use App\Models\Usuario;
+use App\Models\Imagens;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ImovelController extends Controller
 {
     public function vendaView()
     {
-        return view('imovel/venda');
+        $logado = Session::get('info_usuario');
+
+        if (!$logado) {
+            return redirect('/login')->with('mensagem_erro', "A pagina só é permitida para usuarios Logados");
+        }
+
+        $id_logado = $logado->id;
+
+        $imoveis = DB::table('imovel')
+            ->where('id_usuario', $id_logado)
+            ->get();
+
+        return view('imovel/venda', [
+            'logado' => $logado,
+            'imoveis' => $imoveis
+
+        ]);
     }
 
-    
+
     public function pesquisaView(Request $request)
     {
 
@@ -72,5 +93,96 @@ class ImovelController extends Controller
         return view('imovel/pesquisa', [
             'imoveisFiltro' => $imoveisFiltro,
         ]);
+    }
+
+    public function cadastro_Imovel(Request $request)
+    {
+        $logado = Session::get('info_usuario');
+
+        $quarto = $request->input('quarto');
+        $banheiro = $request->input('banheiro');
+        $preco = $request->input('preco');
+        $estado = $request->input('estado');
+        $cidade = $request->input('cidade');
+        $rua = $request->input('rua');
+        $bairro = $request->input('bairro');
+        $numero = $request->input('numero');
+        $cep = $request->input('cep');
+        $descricao = $request->input('descricao');
+        $id = $logado->id;
+
+
+        $encontrar = Imovel::where('numero', $numero)->where('rua', $rua)->where('cidade', $cidade)->where('estado', $estado)->first();
+
+        if ($encontrar) {
+            return redirect('/venda')->with('mensagem_erro', "Este imovel ja esta em anuncio");
+        }
+
+
+        $id_imovel = DB::table('imovel')->insertGetId([
+            'quarto' => $quarto,
+            'banheiro' => $banheiro,
+            'preco' => $preco,
+            'estado' => $estado,
+            'cidade' => $cidade,
+            'rua' => $rua,
+            'bairro' => $bairro,
+            'numero' => $numero,
+            'cep' => $cep,
+            'descricao' => $descricao,
+            'id_usuario' => $id
+        ]);
+
+        return redirect('/imagens/' . $id_imovel);
+    }
+
+
+    public function alterarView()
+    {
+
+      return view('/alterar');
+
+    }
+
+    public function caminho_imovel(Request $request){
+        
+        $id_imovel = $request->input('caminho');
+    }
+
+    public function alterar_Imovel(Request $request)
+    {
+        $logado = Session::get('info_usuario');
+
+
+        $id = $logado->id;
+        $quarto_novo = $request->input('quarto');
+        $banheiro_novo = $request->input('banheiro');
+        $preco_novo = $request->input('preco');
+        $estado_novo = $request->input('estado');
+        $cidade_novo = $request->input('cidade');
+        $rua_novo = $request->input('rua');
+        $bairro_novo = $request->input('bairro');
+        $numero_novo = $request->input('numero');
+        $cep_novo = $request->input('cep');
+        $descricao_novo = $request->input('descricao');
+
+
+
+        DB::table('imovel')
+            ->where('id', $logado->id)
+            ->update([
+                'quarto' => $quarto_novo,
+                'banheiro' => $banheiro_novo,
+                'preco' => $preco_novo,
+                'estado' => $estado_novo,
+                'cidade' => $cidade_novo,
+                'rua' => $rua_novo,
+                'bairro' => $bairro_novo,
+                'numero' => $numero_novo,
+                'cep' => $cep_novo,
+                'descricao' => $descricao_novo
+            ]);
+
+        return redirect('/conta');
     }
 }

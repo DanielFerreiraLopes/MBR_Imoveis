@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
-
 use App\Models\Imovel;
 use App\Models\Usuario;
 use App\Models\Imagens;
@@ -159,83 +157,6 @@ class UsuarioController extends Controller
         }
     }
 
-    public function alterar_Imovel(Request $request)
-    {
-        $logado = Session::get('info_usuario');
-
-
-        $id = $logado->id;
-        $quarto_novo = $request->input('quarto');
-        $banheiro_novo = $request->input('banheiro');
-        $preco_novo = $request->input('preco');
-        $estado_novo = $request->input('estado');
-        $cidade_novo = $request->input('cidade');
-        $rua_novo = $request->input('rua');
-        $bairro_novo = $request->input('bairro');
-        $numero_novo = $request->input('numero');
-        $cep_novo = $request->input('cep');
-        $descricao_novo = $request->input('descricao');
-
-
-
-        DB::table('usuario')
-            ->where('id', $logado->id)
-            ->update([
-                'quarto' => $quarto_novo,
-                'banheiro' => $banheiro_novo,
-                'preco' => $preco_novo,
-                'estado' => $estado_novo,
-                'cidade' => $cidade_novo,
-                'rua' => $rua_novo,
-                'bairro' => $bairro_novo,
-                'numero' => $numero_novo,
-                'cep' => $cep_novo,
-                'descricao' => $descricao_novo
-            ]);
-
-        return redirect('/conta');
-    }
-
-    public function cadastro_Imovel(Request $request)
-    {
-        $logado = Session::get('info_usuario');
-
-        $quarto = $request->input('quarto');
-        $banheiro = $request->input('banheiro');
-        $preco = $request->input('preco');
-        $estado = $request->input('estado');
-        $cidade = $request->input('cidade');
-        $rua = $request->input('rua');
-        $bairro = $request->input('bairro');
-        $numero = $request->input('numero');
-        $cep = $request->input('cep');
-        $descricao = $request->input('descricao');
-        $id = $logado->id;
-
-
-        $encontrar = Imovel::where('numero', $numero)->where('rua', $rua)->where('cidade', $cidade)->where('estado', $estado)->first();
-
-        if ($encontrar) {
-            return redirect('/conta')->with('mensagem_erro', "Este imovel ja esta em anuncio");
-        }
-
-
-        $id_imovel = DB::table('imovel')->insertGetId([
-            'quarto' => $quarto,
-            'banheiro' => $banheiro,
-            'preco' => $preco,
-            'estado' => $estado,
-            'cidade' => $cidade,
-            'rua' => $rua,
-            'bairro' => $bairro,
-            'numero' => $numero,
-            'cep' => $cep,
-            'descricao' => $descricao,
-            'id_usuario' => $id
-        ]);
-
-        return redirect('/imagens/' . $id_imovel);
-    }
 
     public function imagensView(int $id)
     {
