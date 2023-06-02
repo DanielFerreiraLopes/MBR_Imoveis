@@ -137,16 +137,25 @@ class ImovelController extends Controller
     }
 
 
-    public function alterarView()
+    public function alterarView(int $id)
     {
 
-      return view('/alterar');
+        $imovel = DB::table('imovel')
+            ->where('id', $id)
+            ->first();
 
+        return view('imovel/alterar', [
+            'id_imovel' => $id,
+            'imovel' => $imovel,
+        ]);
     }
 
-    public function caminho_imovel(Request $request){
-        
+    public function caminho_imovel(Request $request)
+    {
+
         $id_imovel = $request->input('caminho');
+
+        return redirect('/alterar/' . $id_imovel);
     }
 
     public function alterar_Imovel(Request $request)
@@ -154,7 +163,7 @@ class ImovelController extends Controller
         $logado = Session::get('info_usuario');
 
 
-        $id = $logado->id;
+        $id = $request->input('imovel');
         $quarto_novo = $request->input('quarto');
         $banheiro_novo = $request->input('banheiro');
         $preco_novo = $request->input('preco');
@@ -169,7 +178,7 @@ class ImovelController extends Controller
 
 
         DB::table('imovel')
-            ->where('id', $logado->id)
+            ->where('id', $id)
             ->update([
                 'quarto' => $quarto_novo,
                 'banheiro' => $banheiro_novo,

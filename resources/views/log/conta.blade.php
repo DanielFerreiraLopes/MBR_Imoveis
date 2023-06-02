@@ -21,22 +21,22 @@
         <h4>-- Seus Imoveis --</h4>
 
         <div class="alterar">
-    <form action="caminho_imovel" method="post">
-        <input type="hidden" name="caminho" value="{{ $imovel->id }}">
-        <button>
-            <p>ID: {{ $imovel->id }}</p>
-            <p>RUA: {{ $imovel->rua }}</p>
-            <p>NUMERO: {{ $imovel->numero}}</p>
-            
-        </button>
-    </form>
+            <form action="enviar-imovel" method="post">
+                <input type="hidden" name="caminho" value="{{ $imovel->id }}">
+                <button>
+                    <p>ID: {{ $imovel->id }}</p>
+                    <p>RUA: {{ $imovel->rua }}</p>
+                    <p>NUMERO: {{ $imovel->numero}}</p>
+                    @csrf
+                </button>
+            </form>
 
-    <form action="deletar" method="post">
-        <input type="hidden" name="id_imovel" value="{{ $imovel->id }}">
-        <button type="submit" class="delete">Deletar</button>
-        @csrf
-    </form>
-    @endforeach
+            <form action="deletar" method="post">
+                <input type="hidden" name="id_imovel" value="{{ $imovel->id }}">
+                <button type="submit" class="delete">Deletar</button>
+                @csrf
+            </form>
+            @endforeach
         </div>
 
     </div>
@@ -45,7 +45,7 @@
 
 
 
-    
+
 
 
 </x-layout>
