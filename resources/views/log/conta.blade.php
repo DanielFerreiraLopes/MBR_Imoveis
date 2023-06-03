@@ -24,6 +24,7 @@
             <form action="enviar-imovel" method="post">
                 <input type="hidden" name="caminho" value="{{ $imovel->id }}">
                 <button>
+                    <!-- Essa lilhas estão como botão por causa que vão levar para a pagina de alteração -->
                     <p>ID: {{ $imovel->id }}</p>
                     <p>RUA: {{ $imovel->rua }}</p>
                     <p>NUMERO: {{ $imovel->numero}}</p>

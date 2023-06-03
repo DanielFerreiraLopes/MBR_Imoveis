@@ -16,7 +16,10 @@
             {{ $imovel->descricao }}
         </p>
 
-        <button>ver ++</button>
+        <form action="/caminho_imovel" method="post">
+            <input type="hidden" name="caminho" value="{{ $imovel->id }}">
+            <button>ver ++</button>
+        </form>
     </div>
     @endforeach
 

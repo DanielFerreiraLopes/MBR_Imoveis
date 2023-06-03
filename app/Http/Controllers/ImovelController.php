@@ -150,7 +150,7 @@ class ImovelController extends Controller
         ]);
     }
 
-    public function caminho_imovel(Request $request)
+    public function caminho_alterar(Request $request)
     {
 
         $id_imovel = $request->input('caminho');
@@ -193,5 +193,30 @@ class ImovelController extends Controller
             ]);
 
         return redirect('/conta');
+    }
+
+    public function imovelView(int $id){
+        
+        $imovel = DB::table('imovel')
+            ->where('id', $id)
+            ->first();
+
+        $imagens = DB::table('imagens_imoveis')
+        ->where('id_imovel', $id)
+        ->first();
+
+        return view('imovel/imovel', [
+            'id_imovel' => $id,
+            'imovel' => $imovel,
+            'imagens' => $imagens,
+        ]);
+        
+    }
+
+    public function imovel(Request $request){
+    
+        $id_caminho = $request->input('caminho');
+
+        return redirect('/imovel/' . $id_caminho);
     }
 }
