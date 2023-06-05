@@ -27,4 +27,6 @@ $logado = Session::get("info_usuario");
         @csrf
     </form>
 
+
+
 </x-layout>

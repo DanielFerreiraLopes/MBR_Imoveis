@@ -1,8 +1,8 @@
 <title>Home - MBR Imoveis</title>
 <style>
-    table {
-        color: azure;
-    }
+table {
+    color: azure;
+}
 </style>
 <x-layout>
 
@@ -16,9 +16,10 @@
             {{ $imovel->descricao }}
         </p>
 
-        <form action="/caminho_imovel" method="post">
+        <form action="/caminho-imovel" method="post">
             <input type="hidden" name="caminho" value="{{ $imovel->id }}">
             <button>ver ++</button>
+            @csrf
         </form>
     </div>
     @endforeach

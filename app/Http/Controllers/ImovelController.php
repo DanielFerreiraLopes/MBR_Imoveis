@@ -195,26 +195,33 @@ class ImovelController extends Controller
         return redirect('/conta');
     }
 
-    public function imovelView(int $id){
-        
+    public function imovelView(int $id)
+    {
+
         $imovel = DB::table('imovel')
             ->where('id', $id)
             ->first();
 
         $imagens = DB::table('imagens_imoveis')
-        ->where('id_imovel', $id)
-        ->first();
+            ->where('id_imovel', $id)
+            ->get();
+
+        $proprietario = DB::table('usuario')
+            ->where('id', $imovel->id_usuario)
+            ->first();
 
         return view('imovel/imovel', [
             'id_imovel' => $id,
             'imovel' => $imovel,
             'imagens' => $imagens,
+            'proprietario' => $proprietario,
+
         ]);
-        
     }
 
-    public function imovel(Request $request){
-    
+    public function verimovel(Request $request)
+    {
+
         $id_caminho = $request->input('caminho');
 
         return redirect('/imovel/' . $id_caminho);

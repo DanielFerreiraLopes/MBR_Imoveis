@@ -48,7 +48,7 @@ Route::post('/refazer-imovel', [ImovelController::class, 'alterar_Imovel']);
 Route::get('/pesquisa', [ImovelController::class, 'pesquisaView']);
 
 Route::get('/imovel/{id}', [ImovelController::class, 'imovelView']);
-Route::post('/caminho-imovel', [ImovelController::class, 'imovel']);
+Route::post('/caminho-imovel', [ImovelController::class, 'verimovel']);
 
 Route::get('/teste', function () {
     return view('teste');
