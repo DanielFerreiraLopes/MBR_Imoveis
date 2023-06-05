@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
+
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -14,6 +13,10 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.603);
 }
 
 /* Style da nav bar */
@@ -55,6 +58,10 @@ body {
 
 .navbar a:hover{
     background-color: #8d6546;
+}
+
+.navbar #log:hover{
+    opacity: 50%;
 }
 
 /* Style da nav bar */

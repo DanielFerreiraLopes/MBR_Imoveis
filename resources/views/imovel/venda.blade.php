@@ -24,7 +24,7 @@ $logado = Session::get("info_usuario");
             <input type="text" name="numero" placeholder="Numero" value="{{ $logado->numero }}">
             <input type="text" name="cep" placeholder="Cep" value="{{ $logado->cep }}">
             <input type="text" name="descricao" placeholder="Descrição" value="{{ $logado->descrição }}"><br>
-            <input type="submit" value="Registrar">
+            <input type="submit" value="Registrar" id="reg">
             @csrf
         </form>
     </div>

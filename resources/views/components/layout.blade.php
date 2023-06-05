@@ -18,7 +18,7 @@
 
                 <li><a href="venda"><img src="/img/dollar_sign.svg" alt=""></a></li>
                 <li><a href="conta"><img src="/img/account.svg"></a></li>
-                <li style="float:right"><a class="active" href="login">Login</a></li>
+                <li style="float:right" id="log"><a class="active" href="login" >Login</a></li>
                 <li style="float:right"><button type="button" onclick="mostrar()" class="btn-search"><img src="/img/search.svg"></button></li>
             </ul>
         </div>
