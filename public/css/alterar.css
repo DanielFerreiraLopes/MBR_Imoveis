@@ -1,0 +1,17 @@
+.alterar{
+    text-align: center;
+    background-color: #181920;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0px 0px 50px 2px #4d576e;
+    color: white;
+}
+
+.conteudo-dinamico {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

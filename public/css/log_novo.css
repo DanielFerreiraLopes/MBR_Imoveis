@@ -46,6 +46,14 @@ h4{
     
 }
 
+button:hover {
+    opacity: 50%;
+}
+
+.log_novo #alt:hover{
+    opacity: 50%;
+}
+
 
 
 

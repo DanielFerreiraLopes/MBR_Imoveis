@@ -7,11 +7,11 @@
     <div class="log_novo"><br>
         <H4>Alterar informaçoes da conta</H4>
         <form action="fazer-conta" method="post" class='alt-log'>
-            <input type="text" name="nome_novo" placeholder="nome" value="{{ $logado->nome }}">
-            <input type="text" name="email_novo" placeholder="email" value="{{ $logado->email }}">
-            <input type="text" name="tele_novo" placeholder="telefone" value="{{ $logado->telefone }}">
-            <input type="text" name="senha_novo" placeholder="senha" value="{{ $logado->senha }}">
-            <input type="submit" value="Alterar">
+            <input type="text" name="nome_novo" placeholder="Nome" value="{{ $logado->nome }}">
+            <input type="text" name="email_novo" placeholder="Email" value="{{ $logado->email }}">
+            <input type="text" name="tele_novo" placeholder="Telefone" value="{{ $logado->telefone }}">
+            <input type="text" name="senha_novo" placeholder="Senha" value="{{ $logado->senha }}">
+            <input type="submit" value="Alterar" id="alt">
             @csrf
         </form>
 
