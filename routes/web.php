@@ -44,12 +44,15 @@ Route::post('/fazer-imovel', [ImovelController::class, 'cadastro_Imovel']);
 Route::get('/alterar/{id}', [ImovelController::class, 'alterarView']);
 Route::post('/enviar-imovel', [ImovelController::class, 'caminho_alterar']);
 Route::post('/refazer-imovel', [ImovelController::class, 'alterar_Imovel']);
+Route::post('/imagens-alterar', [ImovelController::class, 'imagens_alterar']);
+Route::post('/deletar_imagens-alterar', [ImovelController::class, 'delete_imagens_alterar']);
 
 
 Route::get('/pesquisa', [ImovelController::class, 'pesquisaView']);
 
 Route::get('/imovel/{id}', [ImovelController::class, 'imovelView']);
 Route::post('/caminho-imovel', [ImovelController::class, 'verimovel']);
+
 
 
 Route::get('/teste', function () {

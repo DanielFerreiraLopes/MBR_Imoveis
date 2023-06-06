@@ -18,6 +18,8 @@
     <p>{{ $proprietario->email }}</p>
     <p>{{ $proprietario->telefone }}</p>
 
+
+    --Imagens devereiam aparecer aqui
     @foreach($imagens as $imagem)
     <img src="{{ $imagem->arquivo }}" alt=""><br>
     @endforeach

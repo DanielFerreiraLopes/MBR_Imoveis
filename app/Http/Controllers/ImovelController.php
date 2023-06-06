@@ -200,6 +200,43 @@ class ImovelController extends Controller
         return redirect('/conta');
     }
 
+    public function imagens_alterar(Request $request)
+    {
+        $path = $request->file('image')->store('fotos', 'public');
+
+        $id = $request->input('id_imovel');
+
+        DB::table('imagens_imoveis')->insert([
+            'arquivo' => '/storage/' . $path,
+            'id_imovel' => $id
+        ]);
+
+        return redirect('/alterar/' . $id);
+    }
+
+    public function delete_imagens_alterar(Request $request)
+    {
+
+        $id = $request->input('id_imagem');
+
+        $id_imovel = $request->input('id_imovel');
+
+        $path = DB::table('imagens_imoveis')
+        ->where('id', $id)
+            ->first('arquivo');
+
+        $novo_texto = str_replace("/storage", "public", $path->arquivo);
+
+        if (Storage::exists($novo_texto)) {
+            Storage::delete($novo_texto);
+        }
+
+        DB::table('imagens_imoveis')->where('id', '=', $id)->where('id_imovel', '=', $id_imovel)->delete();
+
+
+        return redirect('/alterar/' . $id_imovel);
+    }
+
 
 
     public function imovelView(int $id)

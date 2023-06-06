@@ -82,7 +82,7 @@ $logado = Session::get("info_usuario");
     </div>
 
 
-    <form action="/imagens" method="POST" enctype="multipart/form-data" class='form-img'>
+    <form action="/imagens-alterar" method="POST" enctype="multipart/form-data" class='form-img'>
         @csrf
         <input type="file" name="image">
         <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
@@ -92,7 +92,7 @@ $logado = Session::get("info_usuario");
     @foreach ($imagens as $imagem)
     <img src="{{ $imagem->arquivo }}" alt=""><br>
 
-    <form action="/deletar_imagens" method="post">
+    <form action="/deletar_imagens-alterar" method="post">
         @csrf
         <input type="hidden" name="id_imagem" value="{{ $imagem->id }}">
         <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
