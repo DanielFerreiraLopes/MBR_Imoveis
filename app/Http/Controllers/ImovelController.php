@@ -144,9 +144,14 @@ class ImovelController extends Controller
             ->where('id', $id)
             ->first();
 
+        $imagens = DB::table('imagens_imoveis')
+            ->where('id_imovel', $id)
+            ->get();
+
         return view('imovel/alterar', [
             'id_imovel' => $id,
             'imovel' => $imovel,
+            'imagens' => $imagens,
         ]);
     }
 
@@ -194,6 +199,8 @@ class ImovelController extends Controller
 
         return redirect('/conta');
     }
+
+
 
     public function imovelView(int $id)
     {

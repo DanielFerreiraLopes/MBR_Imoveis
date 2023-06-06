@@ -14,9 +14,9 @@
     <p>{{ $imovel->descricao}}</p>
 
     --Proprietario
-    <p>{{ $proprietario->nome}}</p>
-    <p>{{ $proprietario->email}}</p>
-    <p>{{ $proprietario->telefone}}</p>
+    <p>{{ $proprietario->nome }}</p>
+    <p>{{ $proprietario->email }}</p>
+    <p>{{ $proprietario->telefone }}</p>
 
     @foreach($imagens as $imagem)
     <img src="{{ $imagem->arquivo }}" alt=""><br>
