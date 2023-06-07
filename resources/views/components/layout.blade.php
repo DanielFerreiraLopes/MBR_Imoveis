@@ -18,8 +18,15 @@
 
                 <li><a href="venda"><img src="/img/dollar_sign.svg" alt=""></a></li>
                 <li><a href="conta"><img src="/img/account.svg"></a></li>
-                <li style="float:right" id="log"><a class="active" href="login" >Login</a></li>
-                <li style="float:right"><button type="button" onclick="mostrar()" class="btn-search"><img src="/img/search.svg"></button></li>
+                <li style="float:right" id="log"><a class="active" href="login">Login</a></li>
+
+                <!-- <form action="/fazer-logout">
+                    @csrf
+                    <button>Sair</button>
+                    </form> -->
+
+                <li style="float:right"><button type="button" onclick="mostrar()" class="btn-search"><img
+                            src="/img/search.svg"></button></li>
             </ul>
         </div>
     </header>
@@ -46,15 +53,15 @@
     </footer>
 
     <script>
-        function mostrar() {
-            let overlaySearch = document.querySelector(".overlay-search");
-            overlaySearch.classList.remove("hidden");
-        }
+    function mostrar() {
+        let overlaySearch = document.querySelector(".overlay-search");
+        overlaySearch.classList.remove("hidden");
+    }
 
-        function esconder() {
-            let overlaySearch = document.querySelector(".overlay-search");
-            overlaySearch.classList.add("hidden")
-        }
+    function esconder() {
+        let overlaySearch = document.querySelector(".overlay-search");
+        overlaySearch.classList.add("hidden")
+    }
     </script>
 </body>
 

@@ -22,6 +22,7 @@ Route::get('/', [HomeController::class, 'homeView']);
 
 Route::get('/login', [UsuarioController::class, 'loginView']);
 Route::post('/fazer-login', [UsuarioController::class, 'login']);
+Route::post('/fazer-logout', [UsuarioController::class, 'logout']);
 
 Route::get('/cadastro', [UsuarioController::class, 'cadastroView']);
 Route::post('/fazer-cadastro', [UsuarioController::class, 'cadastro']);
@@ -36,6 +37,7 @@ Route::post('/imagens', [UsuarioController::class, 'imagens']);
 Route::post('/deletar_imagens', [UsuarioController::class, 'delete_imagens']);
 
 
+Route::post('/filtrar', [ImovelController::class, 'filtro']);
 
 
 Route::get('/venda', [ImovelController::class, 'vendaView']);

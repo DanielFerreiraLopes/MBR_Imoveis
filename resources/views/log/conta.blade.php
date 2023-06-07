@@ -4,6 +4,8 @@
 
     <link rel="stylesheet" href="/css/log_novo.css">
 
+
+
     <div class="log_novo"><br>
         <H4>Alterar informaçoes da conta</H4>
         <form action="fazer-conta" method="post" class='alt-log'>

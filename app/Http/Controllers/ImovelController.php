@@ -37,7 +37,7 @@ class ImovelController extends Controller
     }
 
 
-    public function pesquisaView(Request $request)
+    public function filtro(Request $request)
     {
 
 
@@ -90,7 +90,7 @@ class ImovelController extends Controller
 
         $imoveisFiltro = $query->get();
 
-        return view('imovel/pesquisa', [
+        return view('home', [
             'imoveisFiltro' => $imoveisFiltro,
         ]);
     }
@@ -222,7 +222,7 @@ class ImovelController extends Controller
         $id_imovel = $request->input('id_imovel');
 
         $path = DB::table('imagens_imoveis')
-        ->where('id', $id)
+            ->where('id', $id)
             ->first('arquivo');
 
         $novo_texto = str_replace("/storage", "public", $path->arquivo);
