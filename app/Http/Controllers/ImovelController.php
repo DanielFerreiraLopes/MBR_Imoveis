@@ -88,11 +88,18 @@ class ImovelController extends Controller
             $query->where('cep', '=', $cep);
         }
 
-        $imoveisFiltro = $query->get();
+        $imoveis = $query->get();
+
+       // $imoveisfiltro = $query->get();
 
         return view('home', [
-            'imoveisFiltro' => $imoveisFiltro,
+            // 'imoveisfiltro' => $imoveisfiltro,
+            'imoveis' => $imoveis,
         ]);
+    }
+
+    public function pesquisa(Request $request){
+        
     }
 
     public function cadastro_Imovel(Request $request)
