@@ -28,6 +28,7 @@
 
 
     @foreach($imoveis as $imovel)
+
     <div class="box_imovel">
         @if ( $imovel->imagens->isNotEmpty())
         <img src="{{ $imovel->imagens[0]->arquivo}}">
@@ -35,13 +36,13 @@
         <p>
             {{ $imovel->descricao }}
         </p>
-
         <form action="/caminho-imovel" method="post">
             <input type="hidden" name="caminho" value="{{ $imovel->id }}">
-            <button>ver ++</button>
+            <input type="submit" value="Ver Detalhes"></input>
             @csrf
         </form>
     </div>
+
     @endforeach
 
 </x-layout>

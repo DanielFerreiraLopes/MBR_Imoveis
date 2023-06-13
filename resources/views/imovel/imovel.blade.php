@@ -1,5 +1,6 @@
 <title>Pesquisa - MBR Imoveis</title>
 <x-layout>
+    <link rel="stylesheet" href="/css/imovel.css">
 
     --Coisa de Imovel
     <p>{{ $imovel->quarto}}</p>

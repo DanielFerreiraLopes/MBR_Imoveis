@@ -33,13 +33,13 @@ body {
 
 .navbar li {
     float: left;
-    
+
 }
 
-.navbar li img{
+.navbar li img {
     width: 20px;
     color: white;
-    
+
 }
 
 .navbar li a {
@@ -50,17 +50,18 @@ body {
     text-decoration: none;
 
 }
+
 .active {
     background-color: #8d6546;
 }
 
 
 
-.navbar a:hover{
+.navbar a:hover {
     background-color: #8d6546;
 }
 
-.navbar #log:hover{
+.navbar #log:hover {
     opacity: 50%;
 }
 
@@ -80,6 +81,7 @@ footer {
     box-sizing: border-box;
     box-shadow: 2px 2px 20px #4d576e;
 }
+
 /* Style do Footer */
 
 
@@ -94,7 +96,7 @@ footer {
     align-items: center;
 }
 
-.login{
+.login {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,7 +131,7 @@ input {
     border-radius: 8px;
 }
 
-.form-login [type='submit']{
+.form-login [type='submit'] {
     display: block;
     background-color: #5568fe;
     font-size: 20px;
@@ -138,7 +140,7 @@ input {
     cursor: pointer;
 }
 
-.alt-log [type='submit']{
+.alt-log [type='submit'] {
     display: block;
     background-color: #5568fe;
     font-size: 20px;
@@ -147,7 +149,7 @@ input {
     cursor: pointer;
 }
 
-.form-venda [type='submit']{
+.form-venda [type='submit'] {
     background-color: #5568fe;
     font-size: 20px;
     text-transform: uppercase;
@@ -155,7 +157,7 @@ input {
     cursor: pointer;
 }
 
-.form-img [type='submit']{
+.form-img [type='submit'] {
     background-color: #5568fe;
     font-size: 20px;
     text-transform: uppercase;
@@ -163,7 +165,7 @@ input {
     cursor: pointer;
 }
 
-.form-finalizar [type='submit']{
+.form-finalizar [type='submit'] {
     background-color: #5568fe;
     font-size: 20px;
     text-transform: uppercase;
@@ -180,6 +182,7 @@ a {
     text-decoration: none;
     margin-left: 10px;
 }
+
 /* Style do login */
 
 
@@ -203,7 +206,7 @@ a {
     align-items: center;
     gap: 50px;
     position: relative;
-} 
+}
 
 .overlay-search {
     display: flex;
@@ -224,7 +227,7 @@ a {
     display: none;
 }
 
-.form-search button{
+.form-search button {
     display: block;
     background-color: #5568fe;
     font-size: 20px;
@@ -251,7 +254,7 @@ form button {
     padding: 14px;
 }
 
-.btn-search:hover{
+.btn-search:hover {
     background-color: #8d6546;
     cursor: pointer;
 }
@@ -274,6 +277,22 @@ form button {
 .pesquisa {
     width: 50vw;
 }
+
+.erro {
+    
+    padding-left: 750px;
+}
+
+.erro p {
+    color: white;
+    background-color: #ed3238;
+    border: solid white;
+    padding: 10px;
+    border-radius: 8px;
+    position: absolute;
+    display: flex;
+
+}
+
+
 /* Style da area de pesquisa */
-
-

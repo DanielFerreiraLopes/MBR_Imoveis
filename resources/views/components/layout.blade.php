@@ -1,3 +1,9 @@
+<?php
+
+use Illuminate\Support\Facades\Session;
+
+$logado = Session::get('info_usuario');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,39 +22,39 @@
             <ul>
                 <li><a href="/"><img src="/img/home.svg"></a></li>
 
-                <li><a href="venda"><img src="/img/dollar_sign.svg" alt=""></a></li>
-                <li><a href="conta"><img src="/img/account.svg"></a></li>
-                <li style="float:right" id="log"><a class="active" href="login">Login</a></li>
+                <li><a href="/venda"><img src="/img/dollar_sign.svg" alt=""></a></li>
+                <li><a href="/conta"><img src="/img/account.svg"></a></li>
 
-                <!--  @if(Auth::check())
-                <li style="float:right" id="log"><a class="active" href="login">Login</a></li>
+                @if(empty($logado))
+                <li style="float:right" id="log"><a class="active" href="/login">Login</a></li>
                 @else
-                <form action="/fazer-logout" method="post">
-                    @csrf
-                    <li style="float:right" id="log"><button><a class="active"> Sair</a></button></li>
-                </form>
-                @endif -->
+                <li style="float:right" id="log"><a class="active" href="/fazer-logout">Sair</a></li>
+                @endif
 
                 <li style="float:right"><button type="button" onclick="mostrar()" class="btn-search"><img src="/img/search.svg"></button></li>
             </ul>
         </div>
     </header>
 
+
+
     @if (session('mensagem_erro'))
-    <div class="">
-        {{ session('mensagem_erro') }}
+    <div class="erro">
+        <p> {{ session('mensagem_erro') }} </p>
     </div>
     @endif
+
 
     <div class="conteudo-dinamico">
         {{ $slot }}
     </div>
 
     <div class="overlay-search hidden">
-        <form action="" class="form-search">
+        <form action="/pesquisar" class="form-search" method="post">
             <button type="button" onclick="esconder()" class="btn-hidden"><img src="img/cancel.svg"></button>
             <input type="text" name="search" class="pesquisa">
-            <button type="submit">Pesquisar</button>
+            <button>Pesquisar</button>
+            @csrf
         </form>
     </div>
     <footer>

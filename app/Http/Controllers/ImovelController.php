@@ -90,7 +90,7 @@ class ImovelController extends Controller
 
         $imoveis = $query->get();
 
-       // $imoveisfiltro = $query->get();
+        // $imoveisfiltro = $query->get();
 
         return view('home', [
             // 'imoveisfiltro' => $imoveisfiltro,
@@ -98,8 +98,23 @@ class ImovelController extends Controller
         ]);
     }
 
-    public function pesquisa(Request $request){
-        
+    public function pesquisa(Request $request)
+    {
+
+        $pesquisa = $request->input('search');
+
+        $query = Imovel::query();
+
+        if ($pesquisa) {
+            $query->where('descricao', 'LIKE', "%$pesquisa%");
+        }
+
+        $imoveis = $query->get();
+
+        return view('home', [
+            // 'imoveisfiltro' => $imoveisfiltro,
+            'imoveis' => $imoveis,
+        ]);
     }
 
     public function cadastro_Imovel(Request $request)

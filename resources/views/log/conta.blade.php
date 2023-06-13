@@ -17,10 +17,12 @@
             @csrf
         </form>
 
+        <h4>-- Seus Imoveis --</h4>
+
         @foreach ($imoveis as $imovel)
 
         <br>
-        <h4>-- Seus Imoveis --</h4>
+
 
         <div class="alterar">
             <form action="enviar-imovel" method="post">
