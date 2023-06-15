@@ -8,30 +8,32 @@
         {{ $imovel->bairro }} - {{ $imovel->rua }}, {{ $imovel->numero }}
     </p>
 
-    <div class='l-imagens'>
+    <div>
+
+        <form action=" /imagens" method="POST" enctype="multipart/form-data" class='form-img'>
+            @csrf
+            <input type="file" name="image">
+            <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
+            <button type="submit">Enviar</button>
+        </form>
 
         <div class='imagens'>
-            <form action=" /imagens" method="POST" enctype="multipart/form-data" class='form-img'>
-                @csrf
-                <input type="file" name="image">
-                <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
-                <button type="submit">Enviar</button>
-            </form>
             @foreach ($imagens as $imagem)
-            <img src="{{ $imagem->arquivo }}" alt=""><br>
+            <div class="box-img-imovel">
+                <img src="{{ $imagem->arquivo }}" alt=""><br>
 
-            <form action="/deletar_imagens" method="post">
-                @csrf
-                <input type="hidden" name="id_imagem" value="{{ $imagem->id }}">
-                <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
-                <button type="submit" class='delete'>Deletar</button><br>
-            </form>
+                <form action="/deletar_imagens" method="post">
+                    @csrf
+                    <input type="hidden" name="id_imagem" value="{{ $imagem->id }}">
+                    <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
+                    <button type="submit" class='delete'>Deletar</button><br>
+                </form>
+            </div>
             @endforeach
-            
-            <br>
-            <a href="/conta" class='voltar'>Voltar</a>
-
         </div>
+
+        <br><br><br>
+        <a href="/conta" class='voltar'>Voltar</a>
     </div>
 
 </x-layout>

@@ -62,12 +62,36 @@
 }
 
 .box_imovel img {
-    width: 400px;
-    height: 350px;
+    width: 150px;
+    height: 150px;
     object-fit: contain;
+}
+
+.box_imovel p {
+    flex-grow: 1;
 }
 
 .box_imovel button {
     cursor: pointer;
 
+}
+
+.box_imovel {
+    color: #fff;
+}
+
+.preco {
+    font-size: 200%;
+}
+
+.bairro {
+    font-size: 125%;
+}
+
+.estado {
+    font-size: 90%;
+}
+
+#section-imoveis {
+    flex-grow: 1;
 }

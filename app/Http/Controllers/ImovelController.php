@@ -72,10 +72,10 @@ class ImovelController extends Controller
             $query->where('rua', 'LIKE', "%$rua%");
         }
         if ($precomax) {
-            $query->where('preco', '>=', $precomax);
+            $query->where('preco', '<=', $precomax);
         }
         if ($precomini) {
-            $query->where('preco', '<=', $precomini);
+            $query->where('preco', '>=', $precomini);
         }
 
         if ($bairro) {
