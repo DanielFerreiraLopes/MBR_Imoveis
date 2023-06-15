@@ -160,14 +160,14 @@ class UsuarioController extends Controller
 
     public function imagensView(int $id)
     {
-
-        $caminho = realpath('6zR8zjHFCw5lOCiEl1ON68aKVPWcZrKCggw98aw4.jpg');
+        $imovel = Imovel::find($id);
 
         $imagens = DB::table('imagens_imoveis')
             ->where('id_imovel', $id)
             ->get();
 
         return view('log/imagens', [
+            'imovel' => $imovel,
             'id_imovel' => $id,
             'imagens' => $imagens,
         ]);
