@@ -7,16 +7,18 @@ $logado = Session::get("info_usuario");
 
 ?>
 <title>Pesquisa - MBR Imoveis</title>
+<link rel="stylesheet" href="/css/alterar.css">
+<link rel="stylesheet" href="/css/flex.css">
 <x-layout>
-
-    <link rel="stylesheet" href="/css/alterar.css">
+  <h1>Alterar Informações do Imovel</h1>
+    
 
     <div class="alterar">
 
-        <h4>Alterar Informações do Imovel</h4>
+      
 
         <form action="/refazer-imovel" method="post" class='form-venda'>
-            <div>
+            <div class="espaco">
                 <input type="hidden" name="imovel" id="Imovel" value="{{ $id_imovel }}">
             </div>
 
@@ -76,30 +78,41 @@ $logado = Session::get("info_usuario");
                 <label for="descricao">Descrição: </label>
                 <input type="text" name="descricao" id="descricao" placeholder="{{ $imovel->descricao }}"
                     value="{{ $imovel->descricao }}"><br>
-            </div> <input type="submit" value="Registrar">
+            </div> <input type="submit" value="Registrar" >
             @csrf
         </form>
     </div>
 
-
+<div class="espaco">
     <form action="/imagens-alterar" method="POST" enctype="multipart/form-data" class='form-img'>
         @csrf
         <input type="file" name="image">
         <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
         <button type="submit">Enviar</button>
     </form>
+    </div>
+    <div class='imagens'>
 
     @foreach ($imagens as $imagem)
-    <img src="{{ $imagem->arquivo }}" alt=""><br>
+     <div class="box-img-imovel">
+    <img src="{{ $imagem->arquivo }}"><br>
+   
 
+    
     <form action="/deletar_imagens-alterar" method="post">
         @csrf
         <input type="hidden" name="id_imagem" value="{{ $imagem->id }}">
         <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
-        <button type="submit" class='delete'>Deletar</button></br>
+        <button type="submit" class='delete'>Deletar</button><br>
     </form>
+ </div>
+    
+
     @endforeach
 
-    <!-- <<<<<<< HEAD=======>>>>>>> 4cff1ced612cebf2962c141ff1d2b69e5b4ac827  -->
+
+    
+    </div>
+
 
 </x-layout>

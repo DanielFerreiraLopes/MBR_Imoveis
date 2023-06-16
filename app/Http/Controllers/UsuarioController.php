@@ -95,6 +95,9 @@ class UsuarioController extends Controller
             ->where('id_usuario', $id_logado)
             ->get();
 
+        
+
+
         return view('log/conta', [
             'logado' => $logado,
             'imoveis' => $imoveis

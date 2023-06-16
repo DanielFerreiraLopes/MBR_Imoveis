@@ -1,4 +1,12 @@
-.alterar{
+h1 {
+    color: white;
+    font-size: 50px;
+
+}
+
+
+
+.alterar {
     text-align: center;
     background-color: #181920;
     border-radius: 10px;
@@ -15,3 +23,55 @@
     align-items: center;
 }
 
+.imagens {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+button [type='submit'] {
+    color: #5568fe;
+
+}
+
+.delete {
+    color: #fe5555;
+    cursor: pointer;
+
+}
+
+.voltar {
+    color: #5558fe;
+
+}
+
+.box-img-imovel {
+    transition: 0.5s;
+    padding: 20px;
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.089);
+}
+
+.box-img-imovel:hover {
+    border: 1px solid white;
+
+}
+
+.l-imagens {
+    display: flex;
+    align-items: center;
+    background-color: #181920;
+    border-radius: 10px;
+    width: 100%;
+    padding: 35px;
+    box-shadow: 2px 2px 20px #4d576e;
+}
+
+.imagens img {
+    width: 340px;
+    height: 340px;
+    object-fit: contain;
+}
