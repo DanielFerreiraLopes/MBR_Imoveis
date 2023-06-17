@@ -1,0 +1,42 @@
+#page-imovel {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+
+#box-info > .flex-col {
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.116);
+    color: white;
+    background: rgb(0 0 0 / 20%);
+    box-shadow: 0 0 12px 2px rgba(0 0 0 / 90%);
+}
+
+.info-owner .nome {
+    font-size: 150%;
+}
+
+#img-main {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.info-house {
+    flex-basis: 620px;
+}
+
+.bairro {
+    font-size: 150%;
+}
+
+.box-imagens img {
+    width: 360px;
+    height: 360px;
+    object-fit: contain;
+}
+
+h1 {
+    margin: 60px 0;
+}

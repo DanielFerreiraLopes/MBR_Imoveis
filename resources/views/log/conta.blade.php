@@ -4,47 +4,46 @@
 
     <link rel="stylesheet" href="/css/log_novo.css">
 
-
-
-    <div class="log_novo"><br>
-        <H4>Alterar informaçoes da conta</H4>
-        <form action="fazer-conta" method="post" class='alt-log'>
-            <input type="text" name="nome_novo" placeholder="Nome" value="{{ $logado->nome }}">
-            <input type="text" name="email_novo" placeholder="Email" value="{{ $logado->email }}">
-            <input type="text" name="tele_novo" placeholder="Telefone" value="{{ $logado->telefone }}">
-            <input type="text" name="senha_novo" placeholder="Senha" value="{{ $logado->senha }}">
-            <input type="submit" value="Alterar" id="alt">
-            @csrf
-        </form>
-
-        <h4>-- Seus Imoveis --</h4>
-
-        @foreach ($imoveis as $imovel)
-
-        <br>
-
-
-        <div class="alterar">
-            <form action="enviar-imovel" method="post">
-                <input type="hidden" name="caminho" value="{{ $imovel->id }}">
-                <button>
-                    <!-- Essa lilhas estão como botão por causa que vão levar para a pagina de alteração -->
-                    <p>ID: {{ $imovel->id }}</p>
-                    <p>RUA: {{ $imovel->rua }}</p>
-                    <p>NUMERO: {{ $imovel->numero}}</p>
-                    @csrf
-                </button>
-            </form>
-
-            <form action="deletar" method="post">
-                <input type="hidden" name="id_imovel" value="{{ $imovel->id }}">
-                <button type="submit" class="delete">Deletar</button>
+    <div id="page-conta">
+        <div>
+            <h1>Minha conta</h1>
+            <form action="fazer-conta" method="post" class="flex-row">
+                <input type="text" name="nome_novo" placeholder="Nome" value="{{ $logado->nome }}">
+                <input type="text" name="email_novo" placeholder="Email" value="{{ $logado->email }}">
+                <input type="text" name="tele_novo" placeholder="Telefone" value="{{ $logado->telefone }}">
+                <input type="text" name="senha_novo" placeholder="Senha" value="{{ $logado->senha }}">
+                <button type="submit" id="alt">Alterar</button>
                 @csrf
             </form>
-            @endforeach
         </div>
 
-        
+        <hr>
+        <div>
+            <h1>Seus Imoveis</h1>
 
+            <section id="section-imoveis">
+                @foreach($imoveis as $imovel)
+
+                <div class="box-imovel">
+                    @if ( $imovel->imagens->isNotEmpty())
+                    <img src="{{ $imovel->imagens[0]->arquivo}}">
+                    @endif
+                    <p>
+                        <span class="estado">{{ $imovel->cidade }}/{{ $imovel->estado }}</span> <br>
+                        <span class="bairro">{{ $imovel->bairro }}</span> <br><br>
+                        <span class="preco">R$ {{ $imovel->preco }}</span><br><br>
+                        {{ $imovel->descricao }}
+                    </p>
+                    <form action="/caminho-imovel" method="post">
+                        <input type="hidden" name="caminho" value="{{ $imovel->id }}">
+                        <input type="submit" value="Ver Detalhes">
+                        @csrf
+                    </form>
+                </div>
+
+                @endforeach
+            </section>
+        </div>
     </div>
+    
 </x-layout>

@@ -9,7 +9,7 @@ $logado = Session::get("info_usuario");
 
     <link rel="stylesheet" href="/css/venda.css">
 
-
+<h1>Registre seu Imovel</h1>
 
     <div class='venda'>
         <h4>Coloque as Informações sobre o imovel</h4>

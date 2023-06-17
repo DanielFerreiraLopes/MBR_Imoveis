@@ -88,20 +88,12 @@ class UsuarioController extends Controller
             return redirect('/login')->with('mensagem_erro', "A pagina só é permitida para usuarios Logados");
         }
 
-
         $id_logado = $logado->id;
-
-        $imoveis = DB::table('imovel')
-            ->where('id_usuario', $id_logado)
-            ->get();
-
-        
-
+        $imoveis = Imovel::where('id_usuario', $id_logado)->get();
 
         return view('log/conta', [
             'logado' => $logado,
-            'imoveis' => $imoveis
-
+            'imoveis' => $imoveis,
         ]);
     }
 

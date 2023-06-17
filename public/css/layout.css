@@ -238,13 +238,15 @@ a {
 
 form button {
     margin-top: 10px;
-    background-color: #252a34;
+    background-color: #8d6546;
     padding-left: 10px;
     color: #cbd0f7;
     border: none;
     height: 45px;
     outline: none;
     border-radius: 8px;
+    padding: 5px 20px;
+    color: white;
 }
 
 .btn-search {
@@ -295,4 +297,6 @@ form button {
 }
 
 
-/* Style da area de pesquisa */
+h1 {
+    color: white;
+}
