@@ -1,14 +1,15 @@
 <title>Home - MBR Imoveis</title>
 <style>
-table {
-    color: azure;
-}
-#form-filtros {
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid white;
-    color: white;
-}
+    table {
+        color: azure;
+    }
+
+    #form-filtros {
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid white;
+        color: white;
+    }
 </style>
 <x-layout>
 
@@ -45,7 +46,7 @@ table {
                 <label for="">Rua:</label>
                 <input type="text" name="rua">
             </div>
-                
+
             <div class="flex-col">
                 <label for="">Bairro:</label>
                 <input type="text" name="bairro">

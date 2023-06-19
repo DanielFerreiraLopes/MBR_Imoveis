@@ -1,3 +1,9 @@
+<?php
+
+use Illuminate\Support\Facades\Session;
+
+$logado = Session::get("info_usuario");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +24,11 @@
 
                 <li><a href="venda"><img src="/img/dollar_sign.svg" alt=""></a></li>
                 <li><a href="conta"><img src="/img/account.svg"></a></li>
-                <li style="float:right" id="log"><a class="active" href="login">Login</a></li>
+                @if (!$logado)
+                <li style="float:right" id="log"><a class="active" href="/login">Login</a></li>
+                @else
+                <li style="float:right" id="log"><a class="active" href="/fazer-logout">Sair</a></li>
+                @endif
 
                 <!--  @if(Auth::check())
                 <li style="float:right" id="log"><a class="active" href="login">Login</a></li>

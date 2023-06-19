@@ -43,6 +43,7 @@ h4 {
 .alterar button.delete {
     height: 50px;
     width: 70px;
+   
 
 }
 
@@ -100,4 +101,11 @@ hr {
 
 #page-conta > * {
     text-align: center;
+}
+
+.deletar{
+    color: rgba(218, 58, 58, 0.781);
+    background-color: #01020ca9;
+    border: 1px solid rgba(218, 58, 58, 0.781);
+    
 }

@@ -39,11 +39,15 @@
                         <input type="submit" value="Ver Detalhes">
                         @csrf
                     </form>
+                    <form action="/deletar" method="post">
+                        <input type="hidden" name="id_imovel" value="{{ $imovel->id }}">
+                        <button class="deletar">Deletar</button>
+                        @csrf
+                    </form>
                 </div>
-
                 @endforeach
             </section>
         </div>
     </div>
-    
+
 </x-layout>
