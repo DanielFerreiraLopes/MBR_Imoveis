@@ -280,23 +280,17 @@ form button {
     width: 50vw;
 }
 
-.erro {
-    
-    padding-left: 750px;
-}
-
-.erro p {
-    color: white;
-    background-color: #ed3238;
-    border: solid white;
-    padding: 10px;
-    border-radius: 8px;
-    position: absolute;
-    display: flex;
-
-}
-
-
 h1 {
     color: white;
+}
+
+.error {
+    color: white;
+    border: 1px solid rgb(218, 35, 35);
+    background-color: rgb(218, 35, 35);
+    border-radius: 7px;
+    padding: 10px;
+    position: absolute;
+    margin-top: 230px;
+    margin-left: 755px;
 }

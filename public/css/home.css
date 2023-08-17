@@ -59,6 +59,7 @@
     gap: 30px;
     padding: 25px;
     box-shadow: 1px 1px 25px black;
+    margin-bottom: 20px;
 }
 
 .box_imovel img {
@@ -95,4 +96,3 @@
 #section-imoveis {
     flex-grow: 1;
 }
-

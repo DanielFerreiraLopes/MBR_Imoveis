@@ -110,8 +110,6 @@ $logado = Session::get("info_usuario");
 
     @endforeach
 
-
-    
     </div>
 
 

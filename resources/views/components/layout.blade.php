@@ -30,22 +30,13 @@ $logado = Session::get("info_usuario");
                 <li style="float:right" id="log"><a class="active" href="/fazer-logout">Sair</a></li>
                 @endif
 
-                <!--  @if(Auth::check())
-                <li style="float:right" id="log"><a class="active" href="login">Login</a></li>
-                @else
-                <form action="/fazer-logout" method="post">
-                    @csrf
-                    <li style="float:right" id="log"><button><a class="active"> Sair</a></button></li>
-                </form>
-                @endif -->
-
                 <li style="float:right"><button type="button" onclick="mostrar()" class="btn-search"><img src="/img/search.svg"></button></li>
             </ul>
         </div>
     </header>
 
     @if (session('mensagem_erro'))
-    <div class="">
+    <div class="error">
         {{ session('mensagem_erro') }}
     </div>
     @endif

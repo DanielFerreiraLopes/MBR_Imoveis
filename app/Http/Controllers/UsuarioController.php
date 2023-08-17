@@ -136,15 +136,17 @@ class UsuarioController extends Controller
             ->where('id_imovel', $id)
             ->get();
 
-        foreach ($imagens as $imagem) {
+        if ($imagens) {
+            foreach ($imagens as $imagem) {
 
-            $delete = str_replace("/storage", "public", $imagem->arquivo);
+                $delete = str_replace("/storage", "public", $imagem->arquivo);
 
-            if (Storage::exists($delete)) {
-                Storage::delete($delete);
+                if (Storage::exists($delete)) {
+                    Storage::delete($delete);
+                }
+
+                DB::table('imagens_imoveis')->where('id_imovel', '=', $id)->delete();
             }
-
-            DB::table('imagens_imoveis')->where('id_imovel', '=', $id)->delete();
 
             DB::table('imovel')->where('id', '=', $id)->where('id_usuario', '=', $logado->id)->delete();
 
