@@ -22,8 +22,8 @@ $logado = Session::get("info_usuario");
             <ul>
                 <li><a href="/"><img src="/img/home.svg"></a></li>
 
-                <li><a href="venda"><img src="/img/dollar_sign.svg" alt=""></a></li>
-                <li><a href="conta"><img src="/img/account.svg"></a></li>
+                <li><a href="/venda"><img src="/img/dollar_sign.svg" alt=""></a></li>
+                <li><a href="/conta"><img src="/img/account.svg"></a></li>
                 @if (!$logado)
                 <li style="float:right" id="log"><a class="active" href="/login">Login</a></li>
                 @else

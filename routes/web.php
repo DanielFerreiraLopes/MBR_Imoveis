@@ -37,7 +37,7 @@ Route::post('/deletar_imagens', [UsuarioController::class, 'delete_imagens']);
 
 
 Route::post('/filtrar', [ImovelController::class, 'filtro']);
-
+ 
 
 Route::get('/venda', [ImovelController::class, 'vendaView']);
 Route::post('/fazer-imovel', [ImovelController::class, 'cadastro_Imovel']);
