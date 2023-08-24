@@ -39,8 +39,6 @@ class ImovelController extends Controller
 
     public function filtro(Request $request)
     {
-
-
         $query = Imovel::query();
 
         $quarto = $request->input('quarto');
@@ -133,13 +131,22 @@ class ImovelController extends Controller
         $descricao = $request->input('descricao');
         $id = $logado->id;
 
-
         $encontrar = Imovel::where('numero', $numero)->where('rua', $rua)->where('cidade', $cidade)->where('estado', $estado)->first();
 
         if ($encontrar) {
             return redirect('/venda')->with('mensagem_erro', "Este imovel ja esta em anuncio");
         }
 
+        if (empty($quarto)) return redirect('/venda')->with('mensagem_erro', "Todas informações devem ser preenchidas");
+        if (empty($banheiro)) return redirect('/venda')->with('mensagem_erro', "Todas informações devem ser preenchidas");
+        if (empty($preco)) return redirect('/venda')->with('mensagem_erro', "Todas informações devem ser preenchidas");
+        if (empty($estado)) return redirect('/venda')->with('mensagem_erro', "Todas informações devem ser preenchidas");
+        if (empty($cidade)) return redirect('/venda')->with('mensagem_erro', "Todas informações devem ser preenchidas");
+        if (empty($rua)) return redirect('/venda')->with('mensagem_erro', "Todas informações devem ser preenchidas");
+        if (empty($bairro)) return redirect('/venda')->with('mensagem_erro', "Todas informações devem ser preenchidas");
+        if (empty($numero)) return redirect('/venda')->with('mensagem_erro', "Todas informações devem ser preenchidas");
+        if (empty($cep)) return redirect('/venda')->with('mensagem_erro', "Todas informações devem ser preenchidas");
+        if (empty($descricao)) return redirect('/venda')->with('mensagem_erro', "Todas informações devem ser preenchidas");
 
         $id_imovel = DB::table('imovel')->insertGetId([
             'quarto' => $quarto,
@@ -157,7 +164,6 @@ class ImovelController extends Controller
 
         return redirect('/imagens/' . $id_imovel);
     }
-
 
     public function alterarView(int $id)
     {

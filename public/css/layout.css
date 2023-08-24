@@ -248,6 +248,10 @@ form button {
     padding: 5px 20px;
     color: white;
 }
+form button:hover {
+    opacity: 50%;
+}
+
 
 .btn-search {
     border: none;
