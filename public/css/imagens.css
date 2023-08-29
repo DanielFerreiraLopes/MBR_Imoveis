@@ -18,7 +18,7 @@ h1 {
     object-fit: contain;
 }
 
-.venda form{
+.venda form {
     display: flex;
     flex-direction: row;
     padding: 20px;
@@ -26,7 +26,7 @@ h1 {
     flex-wrap: wrap;
 }
 
-.conteudo-dinamico{
+.conteudo-dinamico {
     padding: 35px;
     gap: 35px;
 }
@@ -38,20 +38,20 @@ h1 {
     flex-wrap: wrap;
 }
 
-button [type='submit']{
+button [type='submit'] {
     color: #5568fe;
-    
+
 }
 
-.delete{
+.delete {
     color: #fe5555;
     cursor: pointer;
 
 }
 
-.voltar{
+.voltar {
     color: #5558fe;
-    
+
 }
 
 .box-img-imovel {
@@ -65,5 +65,63 @@ button [type='submit']{
 
 .box-img-imovel:hover {
     border: 1px solid white;
-    
+
+}
+
+input[type=file] {
+    width: 350px;
+    max-width: 100%;
+    color: #444;
+    padding: 5px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #555;
+}
+
+input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #084cdf;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+    background: #0d45a5;
+}
+
+.drop-container {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #555;
+    color: #444;
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.drop-container:hover {
+    background: #eee;
+    border-color: #111;
+}
+
+.drop-container:hover .drop-title {
+    color: #222;
+}
+
+.drop-title {
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: color .2s ease-in-out;
 }

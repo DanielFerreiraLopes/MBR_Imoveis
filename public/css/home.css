@@ -6,7 +6,7 @@
 
 
 #form-filtros {
-    max-width: 400px;
+    max-width: 400vw;
 }
 
 .navbar ul {
@@ -37,8 +37,6 @@
 .active {
     background-color: #8d6546;
 }
-
-
 
 .navbar a:hover {
     background-color: #8d6546;
@@ -95,4 +93,14 @@
 
 #section-imoveis {
     flex-grow: 1;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
 }
