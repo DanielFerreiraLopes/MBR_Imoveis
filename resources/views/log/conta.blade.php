@@ -28,22 +28,24 @@
                     @if ( $imovel->imagens->isNotEmpty())
                     <img src="{{ $imovel->imagens[0]->arquivo}}">
                     @endif
-                    <p>
-                        <span class="estado">{{ $imovel->cidade }}/{{ $imovel->estado }}</span> <br>
-                        <span class="bairro">{{ $imovel->bairro }}</span> <br><br>
-                        <span class="preco">R$ {{ $imovel->preco }}</span><br><br>
-                        {{ $imovel->descricao }}
-                    </p>
-                    <form action="/caminho-imovel" method="post">
-                        <input type="hidden" name="caminho" value="{{ $imovel->id }}">
-                        <input type="submit" value="Ver Detalhes">
-                        @csrf
-                    </form>
-                    <form action="/deletar" method="post">
-                        <input type="hidden" name="id_imovel" value="{{ $imovel->id }}">
-                        <button class="deletar">Deletar</button>
-                        @csrf
-                    </form>
+                    <div class="info-imovel">
+                        <p>
+                            <span class="estado">{{ $imovel->cidade }}/{{ $imovel->estado }}</span> <br>
+                            <span class="bairro">{{ $imovel->bairro }}</span> <br><br>
+                            <span class="preco">R$ {{ $imovel->preco }}</span><br><br>
+                            {{ $imovel->descricao }}
+                        </p>
+                        <form action="/caminho-imovel" method="post">
+                            <input type="hidden" name="caminho" value="{{ $imovel->id }}">
+                            <input type="submit" value="Ver Detalhes">
+                            @csrf
+                        </form>
+                        <form action="/deletar" method="post">
+                            <input type="hidden" name="id_imovel" value="{{ $imovel->id }}">
+                            <button class="deletar">Deletar</button>
+                            @csrf
+                        </form>
+                    </div>
                 </div>
                 @endforeach
             </section>

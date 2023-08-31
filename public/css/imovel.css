@@ -5,7 +5,7 @@
 }
 
 
-#box-info > .flex-col {
+#box-info>.flex-col {
     padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.116);
     color: white;
@@ -31,10 +31,16 @@
     font-size: 150%;
 }
 
+.box-imagens {
+    width: 40%;
+    height: auto;
+}
+
 .box-imagens img {
-    width: 360px;
-    height: 360px;
+    width: 100%;
+    height: auto;
     object-fit: contain;
+    border-radius: 8px;
 }
 
 h1 {

@@ -67,15 +67,13 @@ body {
 
 /* Style da nav bar */
 
-
-
 /* Style do Footer */
 footer {
     width: 100%;
     padding: 10px;
-    display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     background: #181920;
     color: #ffffff;
     box-sizing: border-box;
@@ -248,6 +246,7 @@ form button {
     padding: 5px 20px;
     color: white;
 }
+
 form button:hover {
     opacity: 50%;
 }

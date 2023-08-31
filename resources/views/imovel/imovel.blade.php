@@ -2,8 +2,8 @@
  <link rel="stylesheet" href="/css/imovel.css">
  <link rel="stylesheet" href="/css/flex.css">
 <x-layout>
-   
-    <h1>Dados do imóvel</h1>
+
+    <h1></h1>
     
     <div id="box-info" class="flex-row">
         <div class="flex-col content-center">
