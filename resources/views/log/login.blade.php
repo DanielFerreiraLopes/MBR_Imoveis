@@ -11,9 +11,9 @@
 
 
              <form action="fazer-login" method="post" class='form-login'>
-                 <input type="email" name='email' placeholder='Email' required><br>
+                 <input type="email" name='email' placeholder='Email' required>
                  <input type="password" name="senha" id="senha" placeholder="Senha" required><br>
-                 <input type="submit" value="Entrar"><br> @csrf
+                 <input type="submit" value="Entrar"> @csrf
              </form>
              <p>Ainda não tem conta?<a href="cadastro">Criar Conta</a></p><br>
 

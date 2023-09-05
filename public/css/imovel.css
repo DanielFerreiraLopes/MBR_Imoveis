@@ -34,6 +34,7 @@
 .box-imagens {
     width: 40%;
     height: auto;
+    display: flex;
 }
 
 .box-imagens img {

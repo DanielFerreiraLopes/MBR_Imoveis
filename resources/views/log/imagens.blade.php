@@ -32,7 +32,7 @@
                     @csrf
                     <input type="hidden" name="id_imagem" value="{{ $imagem->id }}">
                     <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
-                    <button type="submit" class='delete'>Deletar</button><br>
+                    <button type="submit" class='delete' style="background-color: rgba(0, 0, 0, 0); border: 1px solid red">Retirar Imagem</button><br>
                 </form>
             </div>
             @endforeach
