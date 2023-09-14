@@ -69,10 +69,8 @@ body {
 
 /* Style do Footer */
 footer {
-    width: 100%;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
+    width: auto;
+    padding: 10px 0 10px 0;
     text-align: center;
     background: #181920;
     color: #ffffff;
@@ -114,7 +112,7 @@ footer {
 }
 
 .login img {
-    width: 85px;
+    width: 155px;
     height: auto;
 }
 
@@ -294,7 +292,7 @@ h1 {
     border-radius: 7px;
     padding: 10px;
     position: absolute;
-    margin-top: 230px;
+    margin-top: 200px;
     margin-left: 755px;
 }
 

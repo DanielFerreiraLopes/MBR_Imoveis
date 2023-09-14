@@ -93,6 +93,10 @@ button:hover {
     flex-basis: 300px;
 }
 
+.box-imovel:hover {
+   border: 2px solid rgba(255, 255, 255, 0.568);
+}
+
 hr {
     width: 100%;
 }
