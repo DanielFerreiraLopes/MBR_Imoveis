@@ -22,6 +22,7 @@
             <h1>Seus Imoveis</h1>
 
             <section id="section-imoveis">
+               
                 @foreach($imoveis as $imovel)
 
                 <div class="box-imovel">

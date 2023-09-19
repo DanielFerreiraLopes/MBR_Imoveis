@@ -30,7 +30,7 @@ $logado = Session::get("info_usuario");
                 <li style="float:right" id="log"><a class="active" href="/fazer-logout">Sair</a></li>
                 @endif
 
-                <li style="float:right"><button type="button" onclick="mostrar()" class="btn-search"><img src="/img/search.svg"></button></li>
+                <!-- <li style="float:right"><button type="button" onclick="mostrar()" class="btn-search"><img src="/img/search.svg"></button></li> -->
             </ul>
         </div>
     </header>

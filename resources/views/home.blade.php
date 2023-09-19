@@ -69,26 +69,34 @@
         </form>
 
         <section id="section-imoveis">
-            @foreach($imoveis as $imovel)
+             <form action="" id="form-pesquisa">
+                    <input type="text" name="search" class="pesquisa" placeholder= 'Área de Pesquisa'>
+                    <button type="submit"><img src="/img/search.svg" width="20px"></button>
+                </form>
+              @foreach($imoveis as $imovel)
 
             <div class="box_imovel">
-                @if ( $imovel->imagens->isNotEmpty())
-                <img src="{{ $imovel->imagens[0]->arquivo}}">
-                @endif
-                <p>
-                    <span class="estado">{{ $imovel->cidade }}/{{ $imovel->estado }}</span> <br>
-                    <span class="bairro">{{ $imovel->bairro }}</span> <br><br>
-                    <span class="preco">R$ {{ $imovel->preco }}</span><br><br>
-                    {{ $imovel->descricao }}
-                </p>
-                <form action="/caminho-imovel" method="post">
-                    <input type="hidden" name="caminho" value="{{ $imovel->id }}">
-                    <input type="submit" value="Ver Detalhes">
-                    @csrf
-                </form>
+                <div id="separacao">
+                    @if ( $imovel->imagens->isNotEmpty())
+                    <img src="{{ $imovel->imagens[0]->arquivo}}">
+                    @endif
+                    <div id="escrita">
+                        <p>
+                            <span class="estado">{{ $imovel->cidade }}/{{ $imovel->estado }}</span> <br>
+                            <span class="bairro">{{ $imovel->bairro }}</span> <br><br>
+                            <span class="preco">R$ {{ $imovel->preco }}</span><br><br>
+                            {{ $imovel->descricao }}
+                        </p>
+                        <form action="/caminho-imovel" method="post">
+                            <input type="hidden" name="caminho" value="{{ $imovel->id }}">
+                            <input type="submit" value="Ver Detalhes">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
             </div>
-
             @endforeach
+            
         </section>
     </div>
 

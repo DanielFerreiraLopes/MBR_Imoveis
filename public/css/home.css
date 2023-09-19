@@ -51,19 +51,33 @@
 
 .box_imovel {
     display: flex;
-    flex-direction: row;
     border: 1px solid rgba(255, 255, 255, 0.24);
     align-items: center;
-    gap: 30px;
-    padding: 25px;
+    flex-wrap: wrap;
     box-shadow: 1px 1px 25px black;
     margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .box_imovel img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
+    border-radius: 10px 0 0 10px;
+}
+
+#separacao {
+    display: flex;
+    gap: 10px;
+    flex: 1 1 200px;
+}
+
+#separacao img {
+    width: 400px;
+}
+
+#escrita {
+    flex-direction: row;
+    padding: 25px;
+    align-items: center;
+    flex: 2 1 300px;
 }
 
 .box_imovel p {
@@ -95,6 +109,10 @@
     flex-grow: 1;
 }
 
-@media (max-width: 980px){
-
+#form-pesquisa {
+    display: flex;
+    gap: 10px;
 }
+
+
+@media (max-width: 980px) {}
