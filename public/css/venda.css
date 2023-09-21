@@ -1,4 +1,4 @@
-.venda{ 
+.venda {
     text-align: center;
     background-color: #181920;
     border-radius: 10px;
@@ -8,27 +8,37 @@
     padding-top: 30px;
     box-shadow: 0px 0px 50px 2px #4d576e;
 }
+
 .conteudo-dinamico {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
-h1{
+.form-venda {
+    text-align: center;
+    background-color: #181920;
+    border-radius: 10px;
+    max-width: 450px;
+    box-shadow: 0px 0px 50px 2px #4d576e;
+    padding: 10px 10px 40px 10px;
+}
+
+h1 {
     color: white;
 }
 
-h4{
+h4 {
     color: white;
 }
 
-.venda #reg:hover{
+.venda #reg:hover {
     opacity: 50%;
 }
 
 
-    /*<tr>
+/*<tr>
         <td>{{ $imovel->quarto }}</td>
         <td>{{ $imovel->bairro }}</td>
         <td>{{ $imovel->preco }}</td>

@@ -5,7 +5,11 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-
+header {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
 
 body {
     background-color: #1b1f27;
@@ -13,6 +17,8 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 ::placeholder {
@@ -69,7 +75,7 @@ body {
 
 /* Style do Footer */
 footer {
-    width: auto;
+    width: 100%;
     padding: 10px 0 10px 0;
     text-align: center;
     background: #181920;

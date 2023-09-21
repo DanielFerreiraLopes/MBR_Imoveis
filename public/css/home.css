@@ -115,4 +115,43 @@
 }
 
 
-@media (max-width: 980px) {}
+@media (max-width: 1000px) {
+
+    .box_imovel {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+        color: white;
+        background: rgb(0 0 0 / 20%);
+        box-shadow: 0 0 12px 2px rgba(0 0 0 / 90%);
+        border: 1px solid rgba(255, 255, 255, 0.164);
+        border-radius: 15px;
+    }
+
+    .box_imovel img {
+        width: 400px;
+        height: 250px;
+        padding: 0;
+        margin: 0;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .box_imovel {
+        flex-basis: 300px;
+    }
+
+    #section-imoveis {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    #separacao {
+        display: grid;
+        gap: 10px;
+        flex: 1 1 200px;
+    }
+}

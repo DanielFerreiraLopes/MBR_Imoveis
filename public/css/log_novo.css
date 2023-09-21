@@ -94,7 +94,7 @@ button:hover {
 }
 
 .box-imovel:hover {
-   border: 2px solid rgba(255, 255, 255, 0.568);
+    box-shadow: 2px 2px 20px #1c4cbd;
 }
 
 hr {

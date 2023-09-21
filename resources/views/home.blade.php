@@ -69,9 +69,10 @@
         </form>
 
         <section id="section-imoveis">
-             <form action="" id="form-pesquisa">
+             <form action="/pesquisar" method="post" id="form-pesquisa">
                     <input type="text" name="search" class="pesquisa" placeholder= 'Área de Pesquisa'>
                     <button type="submit"><img src="/img/search.svg" width="20px"></button>
+                    @csrf
                 </form>
               @foreach($imoveis as $imovel)
 
