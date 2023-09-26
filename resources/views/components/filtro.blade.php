@@ -1,4 +1,4 @@
-  <div id="page-home">
+<link rel="stylesheet" href="/css/filtro.css">
         <form action="/filtrar" method="post" id="form-filtros" class="flex-col gap-20">
             <div class="flex-col">
                 <label for="">Quartos:</label>

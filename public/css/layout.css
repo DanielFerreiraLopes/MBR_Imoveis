@@ -94,8 +94,6 @@ footer {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    justify-content: center;
-    align-items: center;
 }
 
 .login {
@@ -190,7 +188,7 @@ a {
 
 
 .conteudo-dinamico {
-    max-width: 1200px;
+    max-width: 1500px;
     width: 100%;
     margin: auto;
     flex-grow: 1;
@@ -284,7 +282,7 @@ form button:hover {
 }
 
 .pesquisa {
-    width: 50vw;
+    width: 100%;
 }
 
 h1 {
@@ -295,11 +293,18 @@ h1 {
     color: white;
     border: 1px solid rgb(218, 35, 35);
     background-color: rgb(218, 35, 35);
-    border-radius: 7px;
     padding: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0;
     position: absolute;
-    margin-top: 200px;
-    margin-left: 755px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    max-width: 400px;
+    top: 80px;
 }
 
 input::-webkit-outer-spin-button,

@@ -1,12 +1,21 @@
 #page-home {
     display: flex;
     flex-direction: row;
-    gap: 40px;
 }
 
+#page-home #section-imoveis {
+    flex-grow: 1;
+    width: 80%;
+}
 
-#form-filtros {
-    max-width: 400vw;
+#page-home #area-filtro {
+    width: 20%;
+}
+
+#form-pesquisa {
+    display: flex;
+    position: static;
+    gap: 10px;
 }
 
 .navbar ul {
@@ -105,17 +114,10 @@
     font-size: 90%;
 }
 
-#section-imoveis {
-    flex-grow: 1;
-}
-
-#form-pesquisa {
-    display: flex;
-    gap: 10px;
-}
 
 
-@media (max-width: 1000px) {
+
+@media (max-width: 1250px) {
 
     .box_imovel {
         flex-direction: column;
@@ -147,11 +149,21 @@
         flex-wrap: wrap;
         gap: 30px;
         justify-content: center;
+        width: 100%;
     }
 
     #separacao {
         display: grid;
         gap: 10px;
         flex: 1 1 200px;
+    }
+
+    #page-home #section-imoveis {
+        flex-grow: 1;
+        width: 100%;
+    }
+    
+    #page-home #area-filtro {
+        display: none;
     }
 }
