@@ -162,8 +162,12 @@
         flex-grow: 1;
         width: 100%;
     }
-    
+
     #page-home #area-filtro {
         display: none;
+    }
+
+    #form-pesquisa {
+        width: 300vw;
     }
 }

@@ -25,9 +25,9 @@ $logado = Session::get("info_usuario");
                 <li><a href="/venda"><img src="/img/dollar_sign.svg" alt=""></a></li>
                 <li><a href="/conta"><img src="/img/account.svg"></a></li>
                 @if (!$logado)
-                <li style="float:right" id="log"><a class="active" href="/login">Login</a></li>
+                <li style="float:right" id="log"><a class="active" href="/login"><img class="log-img" src="/img/log-in.png" alt=""><div class="log-text">Login</div></a></li>
                 @else
-                <li style="float:right" id="log"><a class="active" href="/fazer-logout">Sair</a></li>
+                <li style="float:right" id="log"><a class="active" href="/fazer-logout"><img class="log-img" src="/img/log-out.png" alt=""><div class="log-text">Sair</div></a></li>
                 @endif
 
                 <!-- <li style="float:right"><button type="button" onclick="mostrar()" class="btn-search"><img src="/img/search.svg"></button></li> -->
@@ -37,7 +37,7 @@ $logado = Session::get("info_usuario");
 
     @if (session('mensagem_erro'))
     <div class="error">
-        {{ session('mensagem_erro') }}
+        <img src="/img/exclamation.png" alt="" width="22px" style="filter: invert(100); margin: 0 7px 0 0">{{ session('mensagem_erro') }}
     </div>
     @endif
 

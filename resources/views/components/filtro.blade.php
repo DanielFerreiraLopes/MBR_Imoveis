@@ -37,10 +37,6 @@
                 <label for="">Número:</label>
                 <input type="number" name="numero">
             </div>
-            <div class="flex-col">
-                <label for="">Cep:</label>
-                <input type="number" name="cep">
-            </div>
 
             <div class="flex-col">
                 <label for="">&nbsp;</label>

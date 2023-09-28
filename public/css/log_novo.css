@@ -9,9 +9,23 @@
     box-shadow: 0px 0px 50px 2px #4d576e;
 }
 
-.alt-log input[type='submit'] {
+.form-conta {
+    justify-content: center;
+    align-items: center;
+}
+
+.form-conta input {
+    width: 200px;
+}
+
+#alt input[type='submit'] {
     margin-left: 170px;
     margin-top: 30px;
+}
+
+#alt {
+    font-size: 23px;
+    padding: 0 30px 0 30px;
 }
 
 .conteudo-dinamico {
@@ -71,6 +85,7 @@ button:hover {
 
 .box-imovel .info-imovel {
     padding: 30px;
+    max-width: 300px;
 }
 
 .box-imovel img {
@@ -87,6 +102,7 @@ button:hover {
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+
 }
 
 .box-imovel {
@@ -117,4 +133,9 @@ hr {
     background-color: #01020ca9;
     border: 1px solid rgba(218, 58, 58, 0.781);
 
+}
+
+span {
+    color: white;
+    font-size: 20px;
 }
