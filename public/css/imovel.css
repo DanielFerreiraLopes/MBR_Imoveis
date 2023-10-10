@@ -13,22 +13,40 @@
     box-shadow: 0 0 12px 2px rgba(0 0 0 / 90%);
 }
 
+#box-imovel {
+    display: flex;
+    gap: 30px;
+    color: white;
+    background: rgb(0 0 0 / 20%);
+    box-shadow: 0 0 12px 2px rgba(0 0 0 / 90%);
+    border: 1px solid rgba(255, 255, 255, 0.164);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+#box-imovel #section-img {
+    width: 40%;
+}
+
+#box-imovel #section-imovel {
+    width: 60%;
+    flex-basis: 620px;
+}
+
 .info-owner .nome {
     font-size: 150%;
 }
 
 #img-main {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
+    width: 100%;
+    border-radius: 10px;
 }
 
-.info-house {
-    flex-basis: 620px;
+span{
+    font-size: 5vh;
 }
-
 .bairro {
-    font-size: 150%;
+    font-size: 7vh;
 }
 
 .box-imagens {

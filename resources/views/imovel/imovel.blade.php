@@ -5,7 +5,7 @@
 
     <h1></h1>
     
-    <div id="box-info" class="flex-row">
+    <!--<div id="box-info" class="flex-row">
         <div class="flex-col content-center">
             <img id="img-main" src="{{ $imagens[0]->arquivo }}" alt="">
         </div>
@@ -17,9 +17,9 @@
             </p>
             
             <p>
-                <small>Quartos: {{ $imovel->quarto}}</small>
-                <small>Banheiros: {{ $imovel->banheiro}}</small>
-                <small>Preço: {{ $imovel->preco}}</small>
+                <span>Quartos: {{ $imovel->quarto}}</span>
+                <span>Banheiros: {{ $imovel->banheiro}}</span>
+                <span>Preço: {{ $imovel->preco}}</span>
             </p>
             <p>
                 <span>{{ $imovel->descricao}}</span>
@@ -32,6 +32,26 @@
                 <span class="email">Email: {{ $proprietario->email }}</span>
                 <span class="telefone">Telefone: {{ $proprietario->telefone }}</span>
             </div>
+        </div>
+    </div> -->
+
+    <div id="box-imovel">
+        <div id="section-img">
+            <img id="img-main" src="{{ $imagens[0]->arquivo }}" alt="">
+        </div>
+
+        <div id="section-imovel">
+            <p>
+                <span>{{ $imovel->cidade}} - {{ $imovel->estado}}</span> <br>
+                <span class="bairro">{{ $imovel->bairro}}</span> <br>
+                <span>{{ $imovel->rua}}, {{ $imovel->numero}}</span>
+            </p>
+            <br>
+             <p>
+                <span>Preço: R${{ $imovel->preco}}</span><br>
+                <span>Quartos: {{ $imovel->quarto}}</span><br>
+                <span>Banheiros: {{ $imovel->banheiro}}</span>  
+            </p>
         </div>
     </div>
 
