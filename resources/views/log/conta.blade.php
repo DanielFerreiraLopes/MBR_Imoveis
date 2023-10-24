@@ -5,14 +5,14 @@
     <link rel="stylesheet" href="/css/log_novo.css">
 
     <div id="page-conta">
-        <div>
-            <h1>Minha conta</h1>
+        <h1>Minha conta</h1>
+        <div id="centralizar">        
             <form action="fazer-conta" method="post" class="form-conta">
-                <div class="campo"><span>Nome: </span><input type="text" name="nome_novo" placeholder="Nome" value="{{ $logado->nome }}"></div>
+                <div class="campo"><span>Nome:  </span><input type="text" name="nome_novo" placeholder="Nome" value="{{ $logado->nome }}"></div>
                 <div class="campo"><span>Email: </span><input type="text" name="email_novo" placeholder="Email" value="{{ $logado->email }}"></div>
                 <div class="campo"><span>Telefone: </span><input type="text" name="tele_novo" placeholder="Telefone" value="{{ $logado->telefone }}"></div>
                 <div class="campo"><span>Sua Senha: </span><input type="text" name="senha_novo" placeholder="Senha" value="{{ $logado->senha }}"><br></div>
-                <button type="submit" id="alt">Alterar</button>
+                <div class="campo"><button type="submit" id="alt">Alterar</button></div>
                 @csrf
             </form>
         </div>

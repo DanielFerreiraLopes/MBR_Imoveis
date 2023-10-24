@@ -18,12 +18,13 @@ h1 {
 }
 
 .form-venda {
-    
     width: 80%;
     background-color: #181920;
     border-radius: 10px;
     box-shadow: 0px 0px 50px 2px #4d576e;
     padding: 10px 10px 40px 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 textarea {
@@ -41,29 +42,26 @@ h4 {
 }
 
 hr {
-    width: 380px;
+    width: 400px;
     margin: 0 0 30px 0;
 }
 
 p {
-    margin: 8px 8px 8px 88px;
+    margin: 8px;
+    justify-content: center;
+    text-align: center;
 }
 
 input {
     margin: 5px 5px 5px 5px;
+    width: 29%;
 }
 
-#reg{
+#reg {
     margin: 5px 5px 5px 88px;
+    width: 200px;
 }
 
 .venda #reg:hover {
     opacity: 50%;
 }
-
-
-/*<tr>
-        <td>{{ $imovel->quarto }}</td>
-        <td>{{ $imovel->bairro }}</td>
-        <td>{{ $imovel->preco }}</td>
-     </tr> */
