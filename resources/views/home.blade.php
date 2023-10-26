@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/home.css">
 
     <div id="page-home">
+        
         <div id="area-filtro">
             <x-filtro></x-filtro>
         </div>
@@ -43,6 +44,7 @@
                 </div>
             </div>
             @endforeach
+            <br><br>
             
         </section>
     </div>

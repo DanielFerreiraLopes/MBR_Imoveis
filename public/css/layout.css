@@ -15,7 +15,6 @@ body {
     background-color: #1b1f27;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -65,8 +64,6 @@ body {
     font-size: 20px;
 }
 
-
-
 .navbar a:hover {
     background-color: #8d6546;
 }
@@ -83,13 +80,13 @@ body {
 
 /* Style do Footer */
 footer {
-    width: 100%;
     padding: 10px 0 10px 0;
     text-align: center;
     background: #181920;
     color: #ffffff;
     box-sizing: border-box;
     box-shadow: 2px 2px 20px #4d576e;
+    width: 100%;
 }
 
 /* Style do Footer */

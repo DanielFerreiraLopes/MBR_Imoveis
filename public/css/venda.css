@@ -1,12 +1,21 @@
 h1 {
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
+}
+
+#page-venda{
+    height: 100%;
+    width: 100%;
+    padding: 60px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .venda {
     text-align: center;
     background-color: #181920;
     border-radius: 10px;
-    padding-top: 30px;
     box-shadow: 0px 0px 50px 2px #4d576e;
 }
 
@@ -22,19 +31,22 @@ h1 {
     background-color: #181920;
     border-radius: 10px;
     box-shadow: 0px 0px 50px 2px #4d576e;
-    padding: 10px 10px 40px 10px;
+    padding: 10px 30px 30px 30px;
     justify-content: center;
     align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 textarea {
-    width: 90%;
+    width: 100%;
     padding: 12px 20px;
     box-sizing: border-box;
     border-radius: 8px;
     background-color: #252a34;
     font-size: 16px;
     border: none;
+    color: white;
 }
 
 h4 {
@@ -46,22 +58,38 @@ hr {
     margin: 0 0 30px 0;
 }
 
-p {
+.line {
+    width: 80%;
     margin: 8px;
     justify-content: center;
     text-align: center;
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 input {
     margin: 5px 5px 5px 5px;
-    width: 29%;
+    flex: 30%;
 }
 
 #reg {
-    margin: 5px 5px 5px 88px;
     width: 200px;
 }
 
 .venda #reg:hover {
     opacity: 50%;
+}
+
+#reset {
+    background-color: #e02525;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    width: 200px;
+}
+
+@media (max-width: 450px) {
+
 }

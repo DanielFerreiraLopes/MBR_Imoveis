@@ -1,6 +1,8 @@
 #page-home {
     display: flex;
     flex-direction: row;
+    height: 100%;
+    position: relative;
 }
 
 #page-home #section-imoveis {
@@ -10,6 +12,8 @@
 
 #page-home #area-filtro {
     width: 20%;
+    height: 100vh;
+    
 }
 
 #form-pesquisa {

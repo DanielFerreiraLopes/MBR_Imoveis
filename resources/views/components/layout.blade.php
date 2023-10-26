@@ -45,13 +45,7 @@ $logado = Session::get("info_usuario");
         {{ $slot }}
     </div>
 
-    <div class="overlay-search hidden">
-        <form action="" class="form-search">
-            <button type="button" onclick="esconder()" class="btn-hidden"><img src="img/cancel.svg"></button>
-            <input type="text" name="search" class="pesquisa">
-            <button type="submit">Pesquisar</button>
-        </form>
-    </div>
+    
     <footer>
         Copyright 2023 © - MBR IMOVEIS
     </footer>
