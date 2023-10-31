@@ -11,15 +11,13 @@
 .form-conta {
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 70%;
 }
-
 
 #alt {
     font-size: 25px;
     padding: 0 30px 0 30px;
-    width: 200px;
-    
+    width: 200px; 
 }
 
 .conteudo-dinamico {
@@ -37,26 +35,21 @@ h4 {
     color: white;
 }
 
-
 .alterar {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .alterar button {
     cursor: pointer;
     height: 100%;
-
 }
 
 .alterar button.delete {
     height: 50px;
     width: 70px;
-
-
 }
 
 button:hover {
@@ -66,7 +59,6 @@ button:hover {
 .log_novo #alt:hover {
     opacity: 50%;
 }
-
 
 .box-imovel {
     display: flex;
@@ -122,12 +114,10 @@ hr {
     padding: 60px 30px;
 }
 
-
 .deletar {
     color: rgba(218, 58, 58, 0.781);
     background-color: #01020ca9;
     border: 1px solid rgba(218, 58, 58, 0.781);
-
 }
 
 .campo {
@@ -149,13 +139,62 @@ hr {
 
 .campo span {
     color: white;
-    font-size: 25px;
+    font-size: 20px;
     text-align: left;
     width: 25%;  
 }
 
 #centralizar {
-        display: flex;
-        justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    #page-conta {
+        padding: 0 0 30px 0;
+    }
+
+    #form-conta {
+        width: 80%;
+    }
+
+    .campo {
+        flex-direction: column;
         align-items: center;
+    }
+    .campo input {
+        width: 100%;
+    }
+    
+    .campo span {
+        width: 100%;  
+    }
+
+    .box-imovel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+        color: white;
+        background: rgb(0 0 0 / 20%);
+        box-shadow: 0 0 12px 2px rgba(0 0 0 / 90%);
+        border: 1px solid rgba(255, 255, 255, 0.164);
+        border-radius: 0;
+    }
+    
+    .box-imovel .info-imovel {
+        padding: 20px;
+        max-width: 300px;
+    }
+    
+    .box-imovel img {
+        width: 100%;
+        border-radius: 0;
+    }
+    
+    .box-imovel {
+        flex-basis: 100%;
+    }   
 }

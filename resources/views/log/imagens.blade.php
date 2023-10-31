@@ -2,21 +2,23 @@
 <link rel="stylesheet" href="/css/imagens.css">
 <x-layout>
 
+<div id="page-imagen">
+
     <h1>Imagens do Imóvel</h1>
     <p id="box-info-imovel">
         {{ $imovel->cidade }}/{{ $imovel->estado }} ({{ $imovel->cep }}) <br>
         {{ $imovel->bairro }} - {{ $imovel->rua }}, {{ $imovel->numero }}
     </p>
 
-    <div>
-
-        <form action=" /imagens" method="POST" enctype="multipart/form-data" class='form-img'>
+    <div class="enquadro">
+        <form action=" /imagens" method="POST" enctype="multipart/form-data" id='form-img'>
             @csrf
-            <div class="">
+            <div class="arquivo">
                 <label for="image" class="drop-container" id="dropcontainer">
                     <span class="drop-title">Jogue as imagens aqui</span>
                     ou
                     <input type="file" name="image" id="image" accept="image/*" required>
+                    (as imagens são salvas automaticamente)
                     </label>
                 <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
                 <button type="submit">Enviar as Imagens</button>
@@ -38,10 +40,9 @@
             @endforeach
         </div>
 
-        <br><br><br>
         <a href="/conta" class='voltar'>Voltar</a>
     </div>
-
+</div>
     <script>
         const dropContainer = document.getElementById("dropcontainer")
         const fileInput = document.getElementById("image")
