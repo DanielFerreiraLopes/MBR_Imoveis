@@ -22,7 +22,7 @@
                     @csrf
                 </form>
 
-                <div class="filtro"><button>Filtros</button></div>
+            <div class="filtro"><button>Filtros <img src="/img/filtro (1).png" alt="img filtro" width="20px" style="margin: 0 0 0 10px; filter: invert(100);"></button></div>
               @foreach($imoveis as $imovel)
 
             <div class="box_imovel">

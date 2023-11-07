@@ -121,23 +121,34 @@
 }
 
 .filtro button {
-    margin-top: 10px;
     background-color: #8d6546;
-    padding-left: 10px;
     color: #cbd0f7;
     border: none;
-    height: 45px;
     outline: none;
     border-radius: 8px;
-    padding: 5px 20px;
     color: white;
     display: none;
+}
+
+.filtro button:hover {
+    opacity: 50%;
 }
 
 
 
 
 @media (max-width: 1250px) {
+
+    .filtro button {      
+        display: flex;
+        position: static;
+        width: 90vw;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0 20px 0;
+        font-size: 20px;
+        }
 
     .box_imovel {
         flex-direction: column;
