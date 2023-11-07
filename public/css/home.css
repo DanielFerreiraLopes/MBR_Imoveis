@@ -14,7 +14,7 @@
 #page-home #area-filtro {
     width: 20%;
     height: 100vh;
-    
+
 }
 
 #form-pesquisa {
@@ -120,6 +120,20 @@
     font-size: 90%;
 }
 
+.filtro button {
+    margin-top: 10px;
+    background-color: #8d6546;
+    padding-left: 10px;
+    color: #cbd0f7;
+    border: none;
+    height: 45px;
+    outline: none;
+    border-radius: 8px;
+    padding: 5px 20px;
+    color: white;
+    display: none;
+}
+
 
 
 
@@ -186,7 +200,7 @@
         border: 1px solid rgba(255, 255, 255, 0.164);
         border-radius: 0;
         flex-basis: 100%;
-      
+
     }
 
     .box_imovel img {
@@ -200,7 +214,7 @@
     #separacao {
         padding: 1px;
     }
-    
+
     #separacao img {
         width: 100%;
     }

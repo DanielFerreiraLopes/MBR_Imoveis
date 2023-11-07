@@ -21,6 +21,8 @@
                     <button type="submit"><img src="/img/search.svg" width="20px"></button>
                     @csrf
                 </form>
+
+                <div class="filtro"><button>Filtros</button></div>
               @foreach($imoveis as $imovel)
 
             <div class="box_imovel">

@@ -40,7 +40,7 @@
             @endforeach
         </div>
 
-        <a href="/conta" class='voltar'>Voltar</a>
+        <div class="voltar"><a href="/conta">Voltar</a></div>
     </div>
 </div>
     <script>

@@ -6,7 +6,7 @@
 }
 
 header {
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -327,5 +327,9 @@ input[type=number] {
 @media (max-width: 450px) {
     .log-text {
         display: none;
+    }
+
+    footer{
+        font-size: 12px;
     }
 }

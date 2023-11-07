@@ -8,7 +8,7 @@
     box-shadow: 0px 0px 50px 2px #4d576e;
 }
 
-.form-conta {
+#form-conta {
     justify-content: center;
     align-items: center;
     width: 70%;
@@ -129,25 +129,25 @@ hr {
 }
 
 .campo input {
-    width: 550px;
     margin: 5px;
     padding: 20px;
-    max-width: 500px;
     justify-content: end;
-    width: 75%;
+    width: 70%;
 }
 
 .campo span {
     color: white;
     font-size: 20px;
     text-align: left;
-    width: 25%;  
+    width: 30%;  
+
 }
 
 #centralizar {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 @media (max-width: 600px) {
