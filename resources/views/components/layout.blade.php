@@ -50,17 +50,7 @@ $logado = Session::get("info_usuario");
         Copyright 2023 © - MBR IMOVEIS
     </footer>
 
-    <script>
-        function mostrar() {
-            let overlaySearch = document.querySelector(".overlay-search");
-            overlaySearch.classList.remove("hidden");
-        }
-
-        function esconder() {
-            let overlaySearch = document.querySelector(".overlay-search");
-            overlaySearch.classList.add("hidden")
-        }
-    </script>
+    
 </body>
 
 </html>
