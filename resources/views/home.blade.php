@@ -12,13 +12,15 @@
                 <button type="submit"><img src="/img/search.svg" width="20px"></button>
                 @csrf
             </form>
-
+ 
             <div class="filtro"><button onclick="openfiltro()">Filtros <img src="/img/filtro (1).png" alt="img filtro" width="20px"
             style="margin: 0 0 0 10px; filter: invert(100);"></button></div>
 
         <div id="filtro_responsivo">
-            <a onclick="closefiltro()" class="close-button">&times;</a>
-            <x-filtro></x-filtro>
+            <div class="centralizar">
+                <x-filtro></x-filtro>
+                <a onclick="closefiltro()" class="close-button">&times;</a>
+            </div>
         </div>
 
             @foreach($imoveis as $imovel)
@@ -50,14 +52,25 @@
         </div>
 
         <script> 
-                    function openfiltro() {
-                    document.getElementById("filtro_responsivo").style.display="block";
-                }
 
-                function closefiltro() {
-                    document.getElementById("filtro_responsivo").style.display="none";
-                }
+    function verificarTamanhoDaTela() {
+        var filtro = document.getElementById("filtro_responsivo");
+    
+        if (window.innerWidth > 1280) {
+            filtro.style.display = "none"; 
+        }
+    }
+
+    function openfiltro() {
+        document.getElementById("filtro_responsivo").style.display="block";
+    }
+
+    function closefiltro() {
+        document.getElementById("filtro_responsivo").style.display="none";
+    }
+
+    window.onload = verificarTamanhoDaTela;
+    window.onresize = verificarTamanhoDaTela;
 
         </script>
-
         </x-layout>

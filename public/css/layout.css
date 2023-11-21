@@ -24,10 +24,11 @@ body {
 }
 
 /* Style da nav bar */
-.navbar{
+.navbar {
     width: 100%;
     position: static;
 }
+
 .navbar ul {
     list-style-type: none;
     margin: 0;
@@ -102,7 +103,6 @@ footer {
     justify-content: center;
     align-items: center;
     height: 100vh;
-   
 }
 
 .login {
@@ -146,7 +146,8 @@ input {
     border-radius: 8px;
 }
 
-.form-login [type='submit'] {
+.form-login [type='submit'],
+.form-cadastro [type='submit'] {
     display: block;
     background-color: #5568fe;
     font-size: 20px;
@@ -329,7 +330,7 @@ input[type=number] {
         display: none;
     }
 
-    footer{
+    footer {
         font-size: 12px;
     }
 }

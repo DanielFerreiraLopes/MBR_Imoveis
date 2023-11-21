@@ -7,9 +7,6 @@
              <div>
                  <img src="/img/Logo_White.png">
              </div>
-
-
-
              <form action="fazer-login" method="post" class='form-login'>
                  <input type="email" name='email' placeholder='Email' required>
                  <input type="password" name="senha" id="senha" placeholder="Senha" required><br>

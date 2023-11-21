@@ -11,7 +11,7 @@
 #form-conta {
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 50vw;
 }
 
 #alt {
@@ -112,6 +112,7 @@ hr {
     flex-direction: column;
     gap: 30px;
     padding: 60px 30px;
+    height: 100vh;
 }
 
 .deletar {
