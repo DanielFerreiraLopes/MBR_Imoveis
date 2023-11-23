@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="/css/filtro.css">
         <form action="/filtrar" method="post" id="form-filtros" class="flex-col gap-20">
+            <div class="flex-col titulo">
+                <h1>Filtros <img src="/img/filtro (1).png" alt="img filtro" width="30px"
+            style="margin: 0 0 0 0; filter: invert(100);"></h1>
+            </div>
             <div class="flex-col">
                 <label for="">Quartos:</label>
                 <input type="number" name="quarto" step="1">

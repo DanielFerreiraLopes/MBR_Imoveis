@@ -16,4 +16,8 @@
         border: none;
         padding: 30px;
     }
+
+    .titulo {
+        display: none;
+    }
 }

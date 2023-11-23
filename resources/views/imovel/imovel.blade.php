@@ -39,12 +39,9 @@
 
             <div class="box-imagens">
                 @foreach($imagens as $imagem)
-                <img src="{{ $imagem->arquivo }}" alt="" id="showimg">
-                <div id="myModal" class="modal">
-                <span class="close">&times;</span>
-                <img class="modal-content" id="img01">
-                <div id="caption"></div>
-            </div>
+                <div class="gallery__item">
+                    <img src="{{ $imagem->arquivo }}" alt="">
+                </div>
             @endforeach
         </div>
 
@@ -53,26 +50,32 @@
         </div>
 
         <script>
-            // Get the modal
-            var modal = document.getElementById("myModal");
-
-            // Get the image and insert it inside the modal - use its "alt" text as a caption
-            var img = document.getElementById("showimg");
-            var modalImg = document.getElementById("img01");
-            var captionText = document.getElementById("caption");
-            img.onclick = function () {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                captionText.innerHTML = this.alt;
-            }
-
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function () {
-                modal.style.display = "none";
-            }
+            const images = document.querySelectorAll(".gallery__item img");
+            let imgSrc;
+            // get images src onclick
+            images.forEach((img) => {
+                img.addEventListener("click", (e) => {
+                    imgSrc = e.target.src;
+                    //run modal function
+                    imgModal(imgSrc);
+                });
+            });
+            //creating the modal
+            let imgModal = (src) => {
+                const modal = document.createElement("div");
+                modal.setAttribute("class", "modal");
+                //adding image to modal
+                const newImage = document.createElement("img");
+                newImage.setAttribute("src", src);
+                //creating the close button
+                const closeBtn = document.createElement("i");
+                closeBtn.setAttribute("class", "fas fa-times closeBtn");
+                //close function
+                closeBtn.onclick = () => {
+                    modal.remove();
+                };
+                modal.append(newImage, closeBtn);
+            };
         </script>
 
         </x-layout>

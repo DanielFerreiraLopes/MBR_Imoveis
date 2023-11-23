@@ -103,6 +103,7 @@ footer {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
 }
 
 .login {
@@ -125,7 +126,7 @@ footer {
 }
 
 .login img {
-    width: 155px;
+    width: 255px;
     height: auto;
 }
 
@@ -333,4 +334,5 @@ input[type=number] {
     footer {
         font-size: 12px;
     }
+
 }

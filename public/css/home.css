@@ -44,38 +44,6 @@
     gap: 10px;
 }
 
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #000;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-}
-
-.navbar li {
-    float: left;
-
-}
-
-.navbar li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 18px;
-    text-decoration: none;
-
-}
-
-.active {
-    background-color: #8d6546;
-}
-
-.navbar a:hover {
-    background-color: #8d6546;
-}
 
 .conteudo-dinamico {
     flex-direction: column;
@@ -154,7 +122,6 @@
 .filtro button:hover {
     opacity: 50%;
 }
-
 @media (max-width: 1250px) {
 
     .filtro button {
@@ -167,6 +134,11 @@
         padding: 20px 0 20px 0;
         font-size: 20px;
     }
+
+        #form-filtros button {
+           font-size: 15px;
+           padding: 5px 55px;
+        }
 
     .box_imovel {
         flex-direction: column;
@@ -279,4 +251,6 @@
     #separacao img {
         width: 100%;
     }
+
+    
 }

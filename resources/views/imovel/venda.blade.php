@@ -23,7 +23,6 @@
             <div class="line">
                 <input type="text" name="bairro" placeholder="Bairro" value="{{ $logado->bairro }}">
                 <input type="text" name="numero" placeholder="Numero" value="{{ $logado->numero }}">
-                <input type="text" name="cep" placeholder="Cep" value="{{ $logado->cep }}">
             </div>
             <div class="line">
                 <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Descrição..." value="{{ $logado->descrição }}"></textarea>
