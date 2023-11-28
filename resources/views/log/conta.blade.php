@@ -6,9 +6,9 @@
 
     <div id="page-conta">
         <h1>Minha conta</h1>
-        <div id="centralizar">        
+        <div id="centralizar">
             <form action="fazer-conta" method="post" id="form-conta">
-                <div class="campo"><span>Nome:  </span> <input type="text" name="nome_novo" placeholder="Nome" value="{{ $logado->nome }}"></div>
+                <div class="campo"><span>Nome: </span> <input type="text" name="nome_novo" placeholder="Nome" value="{{ $logado->nome }}"></div>
                 <div class="campo"><span>Email: </span> <input type="text" name="email_novo" placeholder="Email" value="{{ $logado->email }}"></div>
                 <div class="campo"><span>Telefone: </span> <input type="text" name="tele_novo" placeholder="Telefone" value="{{ $logado->telefone }}"></div>
                 <div class="campo"><span>Sua Senha: </span> <input type="text" name="senha_novo" placeholder="Senha" value="{{ $logado->senha }}"><br></div>
@@ -18,11 +18,12 @@
         </div>
 
         <hr>
+        @if(count($imoveis) > 0)
         <div>
-            <h1>Seus Imoveis</h1>
 
             <section id="section-imoveis">
-               
+                <h2>Seus Imoveis</h2>
+
                 @foreach($imoveis as $imovel)
 
                 <div class="box-imovel">
@@ -51,6 +52,17 @@
                 @endforeach
             </section>
         </div>
+        @else
+        <div>
+
+            <section id="section-imoveis">
+                <h2>Seus Imoveis</h2>
+
+                <p> Você não tem imoveis </p>
+            </section>
+        </div>
+        @endif
+
     </div>
 
 </x-layout>

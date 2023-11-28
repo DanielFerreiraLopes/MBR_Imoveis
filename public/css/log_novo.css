@@ -92,7 +92,15 @@ button:hover {
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
+}
+
+
+
+#section-imoveis h2,h3{
+    color: white;
 }
 
 .box-imovel {
@@ -112,7 +120,6 @@ hr {
     flex-direction: column;
     gap: 30px;
     padding: 60px 30px;
-    height: 100vh;
 }
 
 .deletar {

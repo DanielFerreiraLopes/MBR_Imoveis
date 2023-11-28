@@ -75,7 +75,8 @@ button [type='submit'] {
 .voltar {
     color: #5558fe;
     margin: 25px 0 25px 0;
-
+    display: flex;
+    justify-content: center;
 }
 
 .box-img-imovel {

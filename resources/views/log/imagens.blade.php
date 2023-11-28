@@ -40,7 +40,7 @@
             @endforeach
         </div>
 
-        <div class="voltar"><a href="/conta">Voltar</a></div>
+        <div class="voltar"><a href="/conta">Concluir</a></div>
     </div>
 </div>
     <script>

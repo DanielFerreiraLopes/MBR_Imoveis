@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Mockery\Undefined;
 
 class ImovelController extends Controller
 {
@@ -278,9 +279,11 @@ class ImovelController extends Controller
             ->where('id_imovel', $id)
             ->get();
 
+
         $proprietario = DB::table('usuario')
             ->where('id', $imovel->id_usuario)
             ->first();
+
 
         return view('imovel/imovel', [
             'id_imovel' => $id,

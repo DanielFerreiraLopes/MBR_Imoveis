@@ -6,6 +6,7 @@ use App\Models\Imagens;
 use App\Models\Imovel;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 
 class HomeController extends Controller
 {

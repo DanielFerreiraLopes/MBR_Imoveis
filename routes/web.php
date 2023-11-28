@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ImovelController;
 use App\Http\Controllers\HomeController;
+use  Illuminate\Database\QueryException;
 
 /*
 |--------------------------------------------------------------------------
