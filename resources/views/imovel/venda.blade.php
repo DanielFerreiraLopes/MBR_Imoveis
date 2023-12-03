@@ -26,7 +26,7 @@
                 <input type="text" name="cep" placeholder="Cep" value="{{ $logado->cep }}">
             </div>
             <div class="line">
-                <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Descrição..." value="{{ $logado->descrição }}"></textarea>
+                <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Descrição... (Procure colocar palavras chaves para que outros achem seu imovel com mais facilidade)" value="{{ $logado->descrição }}"></textarea>
                     <!--<input type="text" name="descricao" placeholder="Descrição" value="{{ $logado->descrição }}"><br> -->
             </div>
             <br>

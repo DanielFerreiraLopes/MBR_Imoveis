@@ -2,7 +2,7 @@
 <x-layout>
     
     <link rel="stylesheet" href="/css/login.css">
-    <section class="area-login">
+    <section class="area-login cadastro">
         <div class="login">
             <div>
                 <img src="/img/Logo_White.png">

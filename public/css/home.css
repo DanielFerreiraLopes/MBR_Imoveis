@@ -1,9 +1,9 @@
 #page-home {
     display: flex;
     flex-direction: row;
-    height: 100%;
     position: relative;
     width: 100%;
+    height: 100%;
 }
 
 #page-home #filtro_responsivo {
@@ -34,8 +34,7 @@
 
 #page-home #area-filtro {
     width: 20%;
-    height: 100vh;
-
+    height: 150vh;
 }
 
 #form-pesquisa {

@@ -6,7 +6,6 @@
 }
 
 header {
-    width: 100%;
     overflow: hidden;
 }
 
@@ -17,7 +16,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    min-height: 100vh;
+
 }
 
 ::placeholder {
@@ -104,6 +103,14 @@ footer {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
+}
+
+.area-login.cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
     
 }
 
@@ -194,15 +201,6 @@ a {
 }
 
 /* Style do login */
-
-
-
-.conteudo-dinamico {
-    max-width: 1500px;
-    width: 100%;
-    margin: auto;
-    flex-grow: 1;
-}
 
 
 /* Style da area de pesquisa */
