@@ -10,7 +10,7 @@ header {
 }
 
 body {
-    background-color: #1b1f27;
+    background-color: #e6ecfb;
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -20,7 +20,7 @@ body {
 }
 
 ::placeholder {
-    color: rgba(255, 255, 255, 0.603);
+    color: rgba(255, 255, 255, 0.959);
 }
 
 /* Style da nav bar */
@@ -34,7 +34,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #000;
+    background-color: #ffffff;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -47,7 +47,8 @@ body {
 
 .navbar li img {
     width: 22px;
-    color: white;
+    color: rgb(10, 10, 10);
+    filter: invert(100);
 
 }
 
@@ -61,7 +62,7 @@ body {
 }
 
 .active {
-    background-color: #8d6546;
+    background-color: #1324a4;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -69,7 +70,7 @@ body {
 }
 
 .navbar a:hover {
-    background-color: #8d6546;
+    background-color: #17acca;
 }
 
 .navbar #log a {
@@ -86,10 +87,10 @@ body {
 footer {
     padding: 10px 0 10px 0;
     text-align: center;
-    background: #181920;
+    background: #1378a4;
     color: #ffffff;
     box-sizing: border-box;
-    box-shadow: 2px 2px 20px #4d576e;
+    box-shadow: 2px 2px 20px #303746;
     width: 100%;
 }
 
@@ -118,7 +119,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #181920;
+    background-color: #ffffff;
     border-radius: 10px;
     width: 100%;
     max-width: 350px;
@@ -146,9 +147,9 @@ footer {
 
 input {
     margin-top: 10px;
-    background-color: #252a34;
+    background-color: #080909;
     padding-left: 10px;
-    color: #cbd0f7;
+    color: #ffffff;
     border: none;
     height: 45px;
     outline: none;
@@ -158,7 +159,7 @@ input {
 .form-login [type='submit'],
 .form-cadastro [type='submit'] {
     display: block;
-    background-color: #5568fe;
+    background-color: #1324a4;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
@@ -167,7 +168,7 @@ input {
 
 .alt-log [type='submit'] {
     display: block;
-    background-color: #5568fe;
+    background-color: #1324a4;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
@@ -175,7 +176,7 @@ input {
 }
 
 .form-venda [type='submit'] {
-    background-color: #5568fe;
+    background-color: #1324a4;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
@@ -183,7 +184,7 @@ input {
 }
 
 .form-finalizar [type='submit'] {
-    background-color: #5568fe;
+    background-color: #1324a4;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
@@ -195,7 +196,7 @@ p {
 }
 
 a {
-    color: #5568fe;
+    color: #1324a4;
     text-decoration: none;
     margin-left: 10px;
 }
@@ -237,7 +238,7 @@ a {
 
 .form-search button {
     display: block;
-    background-color: #5568fe;
+    background-color: #1324a4;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
@@ -246,7 +247,7 @@ a {
 
 form button {
     margin-top: 10px;
-    background-color: #8d6546;
+    background-color:#1324a4;
     padding-left: 10px;
     color: #cbd0f7;
     border: none;

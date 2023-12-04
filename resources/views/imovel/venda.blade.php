@@ -3,11 +3,11 @@
 
     <link rel="stylesheet" href="/css/venda.css">
  <div id="page-venda">
-    <h1>Registre seu Imóvel</h1>
+    <h1 style="color: black;">Registre seu Imóvel</h1>
     <hr>
 
         <form action="fazer-imovel" method="post" class='form-venda'>
-             <h4 style="text-align: center;">Coloque as Informações sobre o imovel</h4>
+             <h4 style="text-align: center; color: black;">Coloque as Informações sobre o imovel</h4>
              <div class="line">
                 <input type="number" name="quarto" placeholder="Quarto" value="{{ $logado->quarto }}" step="1">
                 <input type="number" name="banheiro" placeholder="Banheiro" value="{{ $logado->banheiro }}" step="1">
@@ -26,7 +26,7 @@
                 <input type="text" name="cep" placeholder="Cep" value="{{ $logado->cep }}">
             </div>
             <div class="line">
-                <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Descrição... (Procure colocar palavras chaves para que outros achem seu imovel com mais facilidade)" value="{{ $logado->descrição }}"></textarea>
+                <textarea style="background-color: #080909;" name="descricao" id="descricao" cols="30" rows="10" placeholder="Descrição... (Procure colocar palavras chaves para que outros achem seu imovel com mais facilidade)" value="{{ $logado->descrição }}"></textarea>
                     <!--<input type="text" name="descricao" placeholder="Descrição" value="{{ $logado->descrição }}"><br> -->
             </div>
             <br>

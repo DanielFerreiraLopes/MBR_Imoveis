@@ -8,6 +8,8 @@
     box-shadow: 0px 0px 50px 2px #4d576e;
 }
 
+
+
 #form-conta {
     justify-content: center;
     align-items: center;
@@ -32,7 +34,7 @@ h1 {
 }
 
 h4 {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .alterar {
@@ -66,16 +68,19 @@ button:hover {
     align-items: center;
     text-align: center;
     gap: 30px;
-    color: white;
-    background: rgb(0 0 0 / 20%);
     box-shadow: 0 0 12px 2px rgba(0 0 0 / 90%);
     border: 1px solid rgba(255, 255, 255, 0.164);
     border-radius: 15px;
+    color: black;
 }
 
 .box-imovel .info-imovel {
     padding: 30px;
     max-width: 300px;
+}
+
+.box-imovel .info-imovel span{
+    color: black;
 }
 
 .box-imovel img {
@@ -99,8 +104,8 @@ button:hover {
 
 
 
-#section-imoveis h2,h3{
-    color: white;
+#section-imoveis h1 , h2 , h3{
+    color: rgb(0, 0, 0);
 }
 
 .box-imovel {
@@ -123,9 +128,9 @@ hr {
 }
 
 .deletar {
-    color: rgba(218, 58, 58, 0.781);
-    background-color: #01020ca9;
-    border: 1px solid rgba(218, 58, 58, 0.781);
+    color: rgb(251, 0, 0);
+    background-color: #01020c;
+    border: 1px solid rgb(255, 0, 0)
 }
 
 .campo {
@@ -144,7 +149,7 @@ hr {
 }
 
 .campo span {
-    color: white;
+    color: black;
     font-size: 20px;
     text-align: left;
     width: 30%;  
@@ -185,8 +190,7 @@ hr {
         align-items: center;
         text-align: center;
         gap: 30px;
-        color: white;
-        background: rgb(0 0 0 / 20%);
+        color: black;
         box-shadow: 0 0 12px 2px rgba(0 0 0 / 90%);
         border: 1px solid rgba(255, 255, 255, 0.164);
         border-radius: 0;

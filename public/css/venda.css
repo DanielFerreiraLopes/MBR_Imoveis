@@ -29,9 +29,8 @@ h1 {
 
 .form-venda {
     width: 80%;
-    background-color: #181920;
     border-radius: 10px;
-    box-shadow: 0px 0px 50px 2px #4d576e;
+    box-shadow: 0px 0px 50px 2px #1c1e23;
     padding: 10px 30px 30px 30px;
     justify-content: center;
     align-items: center;

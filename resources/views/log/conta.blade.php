@@ -2,10 +2,10 @@
 
 <x-layout>
 
-    <link rel="stylesheet" href="/css/log_novo.css">
+    <link rel="stylesheet" href="/css/conta.css">
 
     <div id="page-conta">
-        <h1>Minha conta</h1>
+        <h1 style="color: black;">Minha conta</h1>
         <div id="centralizar">
             <form action="fazer-conta" method="post" id="form-conta">
                 <div class="campo"><span>Nome: </span> <input type="text" name="nome_novo" placeholder="Nome" value="{{ $logado->nome }}"></div>
@@ -35,7 +35,7 @@
                             <span class="estado">{{ $imovel->cidade }}/{{ $imovel->estado }}</span> <br>
                             <span class="bairro">{{ $imovel->bairro }}</span> <br><br>
                             <span class="preco">R$ {{ $imovel->preco }}</span><br><br>
-                            {{ $imovel->descricao }}
+                            <div class="">{{ $imovel->descricao }}</div>
                         </p>
                         <form action="/caminho-imovel" method="post">
                             <input type="hidden" name="caminho" value="{{ $imovel->id }}">

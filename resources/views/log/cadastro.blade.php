@@ -14,7 +14,7 @@
                 <input type="email" name="email" placeholder="Email para Contato" required>
                 <input type="email" name="confirmemail" placeholder="Confirmar Email" required>
                 <input type="password" name="senha" placeholder="Senha" required><br>
-                <input type="submit" value="Cadastrar" style="background-color: #5568fe">
+                <input type="submit" value="Cadastrar" style="background-color: #1324a4">
                 @csrf
             </form>
             <p>Já tem conta?<a href="/login">Fazer Login</a></p>

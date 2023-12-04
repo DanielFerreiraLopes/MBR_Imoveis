@@ -35,7 +35,7 @@
                             <span class="estado">{{ $imovel->cidade }}/{{ $imovel->estado }}</span> <br>
                             <span class="bairro">{{ $imovel->bairro }}</span> <br><br>
                             <span class="preco">R$ {{ $imovel->preco }}</span><br><br>
-                            {{ $imovel->descricao }}
+                            <div class="">{{ $imovel->descricao }}</div>
                         </p>
                         <form action="/caminho-imovel" method="post">
                             <input type="hidden" name="caminho" value="{{ $imovel->id }}">
