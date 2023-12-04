@@ -54,17 +54,20 @@ class UsuarioController extends Controller
     public function cadastro(Request $request)
     {
         $nome = $request->input('nome');
-        $telefone = $request->input('tele');
+        $telefone_start = $request->input('tele');
         $email = $request->input('email');
         $conemail = $request->input('confirmemail');
         $senha = $request->input('senha');
+
+            // Remover espaços em branco e converter para inteiro
+            $telefone_end = (int)str_replace(' ', '', $telefone_start);
 
         if ($email != $conemail) {
             return redirect('/cadastro')->with('mensagem_erro', "A confirmação de email esta incorreta");
         }
 
         $confirma1 = Usuario::where('email', $email)->first();
-        $confirma2 = Usuario::where('telefone', $telefone)->first();
+        $confirma2 = Usuario::where('telefone', $telefone_end)->first();
         if ($confirma1 || $confirma2) {
             return redirect('/cadastro')->with('mensagem_erro', "Esse Email ou Telefone já esta cadastrado, use outro");
         }
@@ -72,7 +75,7 @@ class UsuarioController extends Controller
         DB::table('usuario')->insert([
             'nome' => $nome,
             'email' => $email,
-            'telefone' => $telefone,
+            'telefone' => $telefone_end,
             'senha' => $senha
         ]);
 

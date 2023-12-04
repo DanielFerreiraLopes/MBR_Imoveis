@@ -1,5 +1,4 @@
 #page-imagen {
-    height: 100%;
     width: 100%;
     
 }
@@ -13,24 +12,19 @@
     width: 100%;
 }
 
+
 #form-img [type='submit'] {
-    background-color: #5568fe;
+    background-color: #1324a4;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
 }
 
-.conteudo-dinamico {
-    height: 100%;
-    padding: 10px;
-}
-
 
 p {
     font-size: 20px;
 }
-
 
 .l-imagens {
     display: flex;
@@ -46,6 +40,11 @@ p {
     width: 340px;
     height: 340px;
     object-fit: contain;
+}
+.center{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .venda form {
@@ -71,9 +70,15 @@ button [type='submit'] {
 
 
 .delete {
-    color: #fe5555;
+    color: #f81d1d;
     cursor: pointer;
+    border: 1px solid red;
+    background-color: rgba(0, 0, 0, 0); 
+}
 
+.delete:hover {
+    color: white;
+    background-color: red; 
 }
 
 .voltar {
@@ -81,6 +86,7 @@ button [type='submit'] {
     margin: 25px 0 25px 0;
     display: flex;
     justify-content: center;
+    font-size: 25px;
 }
 
 .box-img-imovel {
@@ -131,25 +137,26 @@ input[type=file]::file-selector-button:hover {
     align-items: center;
     padding: 40px;
     border-radius: 10px;
-    border: 2px dashed #555;
-    color: #d1c4c4;
+    border: 2px dashed #272727;
+    color: #000000;
     cursor: pointer;
     transition: background .2s ease-in-out, border .2s ease-in-out;
     margin-bottom: 15px;
 }
 
+
 .drop-container:hover {
-    background: #eee;
-    border-color: #111;
-    color: #222;
+    background: #000000b8;
+    border-color: #fffcfc;
+    color: #fffefe;
 }
 
 .drop-container:hover .drop-title {
-    color: #222;
+    color: #e4dddd;
 }
 
 .drop-title {
-    color: #d4d0d0;
+    color: #000000;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
@@ -171,7 +178,7 @@ input[type=file]::file-selector-button:hover {
         padding: 20px;
         border-radius: 10px;
         border: 2px dashed #555;
-        color: #d1c4c4;
+        color: #000000;
         cursor: pointer;
         transition: background .2s ease-in-out, border .2s ease-in-out;
         margin-bottom: 10px;
@@ -237,4 +244,10 @@ input[type=file]::file-selector-button:hover {
     }
 
 
+}
+
+@media (max-width: 300px) {
+    .arquivo button{
+        height: 60px;
+    }
 }

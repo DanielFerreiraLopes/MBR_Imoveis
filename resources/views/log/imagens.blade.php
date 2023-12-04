@@ -4,8 +4,8 @@
 
 <div id="page-imagen">
 
-    <h1>Imagens do Imóvel</h1>
-    <p id="box-info-imovel">
+    <h1 style="color: black;">Imagens do Imóvel</h1>
+    <p id="box-info-imovel" style="color: black;">
         {{ $imovel->cidade }}/{{ $imovel->estado }} ({{ $imovel->cep }}) <br>
         {{ $imovel->bairro }} - {{ $imovel->rua }}, {{ $imovel->numero }}
     </p>
@@ -18,13 +18,13 @@
                     <span class="drop-title">Jogue as imagens aqui</span>
                     ou
                     <input type="file" name="image" id="image" accept="image/*" required>
-                    (as imagens são salvas automaticamente)
-                    </label>
+                    (as imagens são salvas automaticamente depois de envialas)
+                </label>
                 <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
-                <button type="submit">Enviar as Imagens</button>
+                <button type="submit">Enviar a Imagem</button>
             </div>
         </form>
-
+@if (count($imagens) > 0)
         <div class='imagens'>
             @foreach ($imagens as $imagem)
             <div class="box-img-imovel">
@@ -34,11 +34,14 @@
                     @csrf
                     <input type="hidden" name="id_imagem" value="{{ $imagem->id }}">
                     <input type="hidden" name="id_imovel" value="{{ $id_imovel }}">
-                    <button type="submit" class='delete' style="background-color: rgba(0, 0, 0, 0); border: 1px solid red">Retirar Imagem</button><br>
+                    <button type="submit" class='delete' style="">Retirar Imagem</button><br>
                 </form>
             </div>
             @endforeach
         </div>
+        @else
+        <div class="center" style="display= flex; height: 50vh;"><h3>Esse Imóvel Não Tem Imagens</h3></div>
+        @endif
 
         <div class="voltar"><a href="/conta">Concluir</a></div>
     </div>

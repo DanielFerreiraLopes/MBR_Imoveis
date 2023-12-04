@@ -58,7 +58,7 @@
             <section id="section-imoveis">
                 <h2>Seus Imoveis</h2>
 
-                <p> Você não tem imoveis </p>
+                <p style="color: black"> Você não tem imoveis </p>
             </section>
         </div>
         @endif

@@ -10,21 +10,21 @@
             <img id="img-main" src="{{ $imagens[0]->arquivo }}" alt="">
             @else
 
-            <img id="img-main" src="/img/Logo_White.png" alt="">
+            <img id="img-main" src="/img/Logo_Black.png" alt="">
             @endif
         </div>
 
         <div id="section-imovel">
             <p>
-                <span>{{ $imovel->cidade}} - {{ $imovel->estado}}</span> <br>
-                <span class="bairro">{{ $imovel->bairro}}</span> <br>
-                <span>{{ $imovel->rua}}, {{ $imovel->numero}}</span>
+                <span><b>{{ $imovel->cidade}} - {{ $imovel->estado}}</b></span> <br>
+                <span class="bairro"><b>{{ $imovel->bairro}}</b></span> <br>
+                <span><b>{{ $imovel->rua}}, {{ $imovel->numero}}</b></span>
             </p>
             <br>
             <p>
-                <span>Preço: R${{ $imovel->preco}}</span><br>
-                <span>Quartos: {{ $imovel->quarto}}</span><br>
-                <span>Banheiros: {{ $imovel->banheiro}}</span>
+                <span><b>Preço:</b> R${{ $imovel->preco}}</span><br>
+                <span><b>Quartos:</b> {{ $imovel->quarto}}</span><br>
+                <span><b>Banheiros:</b> {{ $imovel->banheiro}}</span>
             </p>
         </div>
     </div>

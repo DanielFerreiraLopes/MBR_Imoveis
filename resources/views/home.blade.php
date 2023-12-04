@@ -19,9 +19,11 @@
         <div id="filtro_responsivo">
             <div class="centralizar">
                 <x-filtro></x-filtro>
-                <a onclick="closefiltro()" class="close-button">&times;</a>
+                <a onclick="closefiltro()" class="close-button" style="color: black">&times;</a>
             </div>
         </div>
+
+        @if(count($imoveis) > 0)
 
             @foreach($imoveis as $imovel)
 
@@ -47,6 +49,10 @@
             </div>
             @endforeach
             <br><br>
+
+            @else
+            <div class="" style="height: 80vh; text-align: center; display: flex; justify-content: center;"><h2>Nenhum Resultado</h2></div>
+            @endif
 
         </section>
         </div>
