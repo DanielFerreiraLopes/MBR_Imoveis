@@ -33,13 +33,12 @@ $logado = Session::get("info_usuario");
                 <!-- <li style="float:right"><button type="button" onclick="mostrar()" class="btn-search"><img src="/img/search.svg"></button></li> -->
             </ul>
         </div>
+        @if (session('mensagem_erro'))
+        <div class="error">
+            <img src="/img/exclamation.png" alt="" width="22px" style="filter: invert(100); margin: 0 7px 0 0">{{ session('mensagem_erro') }}
+        </div>
+        @endif
     </header>
-
-    @if (session('mensagem_erro'))
-    <div class="error">
-        <img src="/img/exclamation.png" alt="" width="22px" style="filter: invert(100); margin: 0 7px 0 0">{{ session('mensagem_erro') }}
-    </div>
-    @endif
 
     <div class="conteudo-dinamico">
         {{ $slot }}

@@ -29,7 +29,7 @@ class UsuarioController extends Controller
 
         if ($usuario) {
             Session::put('info_usuario', $usuario);
-            return redirect('/');
+            return redirect('/conta');
         } else {
             return redirect('/login')->with('mensagem_erro', "Usuario não encontrado");
         }

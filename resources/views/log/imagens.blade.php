@@ -11,7 +11,7 @@
     </p>
 
     <div class="enquadro">
-        <form action=" /imagens" method="POST" enctype="multipart/form-data" id='form-img'>
+        <form action="/imagens" method="POST" enctype="multipart/form-data" id='form-img'>
             @csrf
             <div class="arquivo">
                 <label for="image" class="drop-container" id="dropcontainer">

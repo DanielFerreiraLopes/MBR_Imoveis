@@ -306,13 +306,10 @@ h1 {
     align-items: center;
     display: flex;
     margin: 0;
-    position: absolute;
     left: 0;
     right: 0;
     margin: auto;
     width: 100%;
-    max-width: 420px;
-    top: 80px;
 }
 
 input::-webkit-outer-spin-button,

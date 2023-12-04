@@ -5,7 +5,7 @@
     <section class="area-login cadastro">
         <div class="login">
             <div>
-                <img src="/img/Logo_White.png">
+                <img src="/img/Logo_Black.png">
             </div>
 
             <form action="fazer-cadastro" method="post" class="form-cadastro">
@@ -17,7 +17,7 @@
                 <input type="submit" value="Cadastrar" style="background-color: #5568fe">
                 @csrf
             </form>
-            <p>Já tem conta?<a href="login">Fazer Login</a></p>
+            <p>Já tem conta?<a href="/login">Fazer Login</a></p>
         </div>
     </section>
 </x-layout>
